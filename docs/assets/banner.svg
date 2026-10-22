@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-label="OZ AI Study Material">
+  <rect width="1280" height="300" fill="#f2f2f0"/>
+  <rect x="0" y="0" width="16" height="300" fill="#ee510e"/>
+  <text x="64" y="68" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#ee510e">OZ LAB / AI STUDY</text>
+  <text x="60" y="143" font-family="Arial, sans-serif" font-size="56" font-weight="700" fill="#262626">From the first prediction</text>
+  <text x="60" y="205" font-family="Arial, sans-serif" font-size="56" font-weight="700" fill="#262626">to understanding models</text>
+  <text x="64" y="259" font-family="Arial, sans-serif" font-size="18" fill="#666666">Hand calculations, visual intuition, and code you can work through.</text>
+  <g transform="translate(932 48)">
+    <path d="M0 195H280M16 218V0" stroke="#b8b8b5" stroke-width="2"/>
+    <path d="M28 34C65 156 96 195 136 172S205 94 255 20" fill="none" stroke="#ee510e" stroke-width="5"/>
+    <g fill="#ee510e" stroke="#f2f2f0" stroke-width="4"><circle cx="34" cy="52" r="8"/><circle cx="60" cy="117" r="8"/><circle cx="85" cy="158" r="8"/><circle cx="110" cy="177" r="8"/></g>
+    <circle cx="124" cy="177" r="13" fill="#262626" stroke="#f2f2f0" stroke-width="4"/>
+  </g>
+</svg>
