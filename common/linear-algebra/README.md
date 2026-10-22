@@ -2,9 +2,12 @@
 
 A multiple-choice quiz with simple calculations and drawings based on the assigned 3Blue1Brown linear algebra videos. It covers vectors, linear combinations, span, basis vectors, linear transformations, matrix composition, and dot products.
 
-| Student copy | Worked answers | Editable sources |
+| Language | Student copy | Worked answers |
 | :--- | :--- | :--- |
-| [Quiz PDF](handouts/visual-quiz.worksheet.ko.pdf) | [Answer PDF](handouts/visual-quiz.answers.ko.pdf) | [LaTeX](source/) |
+| English | [Quiz PDF](handouts/visual-quiz.worksheet.en.pdf) | [Answer PDF](handouts/visual-quiz.answers.en.pdf) |
+| 한국어 | [Quiz PDF](handouts/visual-quiz.worksheet.ko.pdf) | [Answer PDF](handouts/visual-quiz.answers.ko.pdf) |
+
+[Editable LaTeX sources for both languages](source/)
 
 Read a question, make a small sketch or calculation, and then choose one answer. The answer copy keeps the same template and adds the reasoning in red.
 

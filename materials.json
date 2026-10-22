@@ -2,12 +2,28 @@
   "format_version": 1,
   "materials": [
     {
+      "path": "common/ai-safety/notes/introduction-to-technical-ai-safety.ko.md",
+      "source": "common/ai-safety/notes/introduction-to-technical-ai-safety.md",
+      "language": "ko",
+      "role": "speaker notes",
+      "bytes": 22137,
+      "sha256": "6f9bce5e6907d54d093b49d78ce5fdf86ee6b1f29a53250d891ebec07ad9ab59"
+    },
+    {
       "path": "common/ai-safety/notes/introduction-to-technical-ai-safety.md",
       "source": "work/technical_ai_safety/content.json",
       "language": "en",
       "role": "speaker notes",
       "bytes": 19161,
       "sha256": "3c896cde53fb3e11cf75b880ee09709f31d111b8a50c765044555059cc63dcbc"
+    },
+    {
+      "path": "common/ai-safety/notes/technical-solutions.en.md",
+      "source": "common/ai-safety/notes/technical-solutions.ko.md",
+      "language": "en",
+      "role": "speaker notes",
+      "bytes": 14776,
+      "sha256": "63def7590a1d530ccc2d0f0f73e8d0dc93f77825245aae1d71470f660a0c813b"
     },
     {
       "path": "common/ai-safety/notes/technical-solutions.ko.md",
@@ -22,8 +38,16 @@
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 880,
-      "sha256": "d2bcbf58a6a948f739a4eef582a9f331a8c7203bc4d5ad42b4ca4dfe7b1a724b"
+      "bytes": 1087,
+      "sha256": "5e6ea71b43697080650a5e60df00a1e64ab26536bb0fd94e7cc034fe73d7aa67"
+    },
+    {
+      "path": "common/ai-safety/slides/introduction-to-technical-ai-safety.ko.pptx",
+      "source": "common/ai-safety/slides/introduction-to-technical-ai-safety.pptx",
+      "language": "ko",
+      "role": "presentation",
+      "bytes": 13927452,
+      "sha256": "6f15a489d21da6bf5dac6a832145dc7e3f062144d172ae08f9e34ed9f0846142"
     },
     {
       "path": "common/ai-safety/slides/introduction-to-technical-ai-safety.pptx",
@@ -32,6 +56,14 @@
       "role": "presentation",
       "bytes": 14023999,
       "sha256": "ced244357f28b438786cf0eb048d3a442e62521b3305cde5a794faf62c862fc6"
+    },
+    {
+      "path": "common/ai-safety/slides/technical-solutions.en.pptx",
+      "source": "common/ai-safety/slides/technical-solutions.ko.pptx",
+      "language": "en",
+      "role": "presentation",
+      "bytes": 5185703,
+      "sha256": "6c64397c3c53237bc19ce0d08b6d94046c8ab2df5f7bb527ca29320d27182fa1"
     },
     {
       "path": "common/ai-safety/slides/technical-solutions.ko.pptx",
@@ -70,24 +102,48 @@
       "source": "outputs/MLS_C1_W1_W2_W3_Answer_Key.ipynb",
       "language": "en",
       "role": "Colab notebook",
-      "bytes": 409652,
-      "sha256": "e20379b1a63a0219875896ced2f6993b8af34685779b4b015e64cca9edd545f6"
+      "bytes": 409719,
+      "sha256": "bab641875b04520ecb21b1ef32eacac38768a6150a27579dde70b4bd76e77261"
+    },
+    {
+      "path": "common/course-1/notebooks/optional-labs.answers.ko.ipynb",
+      "source": "common/course-1/notebooks/optional-labs.answers.ipynb",
+      "language": "ko",
+      "role": "Colab notebook",
+      "bytes": 426045,
+      "sha256": "65a40165a5b6cd9c048e72eed52463c918079f674c001a908a53bbeb0bc0c5e7"
     },
     {
       "path": "common/course-1/notebooks/optional-labs.student.ipynb",
       "source": "work/optional_labs/symbol_checked.ipynb",
       "language": "en",
       "role": "Colab notebook",
-      "bytes": 407834,
-      "sha256": "83d9043be8d343ff8dca8d3a68e4fef94b83d24e177280c998f04ad90f7e274b"
+      "bytes": 407901,
+      "sha256": "9eb919b2b16f97c7440e7867b48c63bac33874792d786eab0b149c683b3fafed"
+    },
+    {
+      "path": "common/course-1/notebooks/optional-labs.student.ko.ipynb",
+      "source": "common/course-1/notebooks/optional-labs.student.ipynb",
+      "language": "ko",
+      "role": "Colab notebook",
+      "bytes": 426461,
+      "sha256": "2eea79967d750a3c4d0b29d84a7f919afef6c8cc72b0e6737359642c8b448532"
     },
     {
       "path": "common/course-1/README.md",
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 1692,
-      "sha256": "b38ec51f41d4f9ee4242ddbc6a9226232c9b2941e95f825796a99b0cb070f55c"
+      "bytes": 2472,
+      "sha256": "e03051639f5ff69645c065fd22b268e49cf7a626dbfb7f35a7a3b98e3a0d7462"
+    },
+    {
+      "path": "common/course-1/slides/course-1-weeks-01-to-03.en.pptx",
+      "source": "common/course-1/slides/course-1-weeks-01-to-03.pptx",
+      "language": "en",
+      "role": "presentation",
+      "bytes": 38101111,
+      "sha256": "63503aef884879c4d9392c2956d0d19420bc1f7fc7b843feeb955f12dcc97770"
     },
     {
       "path": "common/course-1/slides/course-1-weeks-01-to-03.pptx",
@@ -98,6 +154,14 @@
       "sha256": "b765c3012dc7e6ca248ebab3891589c2fa5451b744912297ec1eb12fabe21ca9"
     },
     {
+      "path": "common/course-1/teaching-notes.en.md",
+      "source": "common/course-1/teaching-notes.ko.md",
+      "language": "en",
+      "role": "detailed speaker notes",
+      "bytes": 114543,
+      "sha256": "c394931fe0050b5d559944f9a651d19437281a2dc4e0b7fa445b593eff081c19"
+    },
+    {
       "path": "common/course-1/teaching-notes.ko.md",
       "source": "outputs/MLS_C1_W1_W2_W3_Korean_Script_Detailed.md",
       "language": "ko",
@@ -106,12 +170,28 @@
       "sha256": "72d89952f1843551d6170bbc55fd414ddb791efea00030947ccdf45f27b82b36"
     },
     {
+      "path": "common/linear-algebra/handouts/visual-quiz.answers.en.pdf",
+      "source": "common/linear-algebra/handouts/visual-quiz.answers.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 53169,
+      "sha256": "8dcf45c230a83ba52244f6cc68ea10e5063f132d4ff0f484780f7fbeea02e4d9"
+    },
+    {
       "path": "common/linear-algebra/handouts/visual-quiz.answers.ko.pdf",
       "source": "output/pdf/Linear_Algebra_Visual_Quiz_Answer_Key.pdf",
       "language": "ko",
       "role": "PDF handout",
       "bytes": 74497,
       "sha256": "10e48a165d47c718ac35d8af0f3c2646fceff7c2e731c6895f6f4b5478f5f820"
+    },
+    {
+      "path": "common/linear-algebra/handouts/visual-quiz.worksheet.en.pdf",
+      "source": "common/linear-algebra/handouts/visual-quiz.worksheet.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 44139,
+      "sha256": "549ccf893a4a5f5fdc55b323e33c183b0825e6f5b77b012e4bc7492aed8f6cd7"
     },
     {
       "path": "common/linear-algebra/handouts/visual-quiz.worksheet.ko.pdf",
@@ -126,8 +206,16 @@
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 697,
-      "sha256": "deb7b9725b3c3f69db0cd11ea435cdba78bca1286ef1ba6ecbf83a0c056e011d"
+      "bytes": 852,
+      "sha256": "ac69d05188b9d02b357e4b51132fa6b9e8ea01f677b289d41bd788d7eaefd273"
+    },
+    {
+      "path": "common/linear-algebra/source/visual-quiz.answers.en.tex",
+      "source": "common/linear-algebra/source/visual-quiz.answers.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 15066,
+      "sha256": "bdcee8ae8a6204fd6429e95beec1073b477a08e4376935de1a6aaa4561bc33b8"
     },
     {
       "path": "common/linear-algebra/source/visual-quiz.answers.ko.tex",
@@ -136,6 +224,14 @@
       "role": "LaTeX source",
       "bytes": 15574,
       "sha256": "671da07122ffab96397bdd87b5bdc9a1bf0ce5bdf76884a543d37369c4569601"
+    },
+    {
+      "path": "common/linear-algebra/source/visual-quiz.worksheet.en.tex",
+      "source": "common/linear-algebra/source/visual-quiz.worksheet.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 15056,
+      "sha256": "2994d76599e239420d650f66af41961319382e317da97271b12ddb4fde66061e"
     },
     {
       "path": "common/linear-algebra/source/visual-quiz.worksheet.ko.tex",
@@ -150,16 +246,24 @@
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 873,
-      "sha256": "fbc7e83de7fce48dd6035cd1b06c77bd00c6d739367f5e5f1d26a1316078ecc3"
+      "bytes": 881,
+      "sha256": "afc980a87a4f7991506e344831ec1a4f353778a2bf23960ec373a0541211aad4"
     },
     {
       "path": "common/transformers/README.md",
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 755,
-      "sha256": "892f2d414e866ee3c4873dc5a417390e72e474a2c6cb99fb4d3c5a6d5a175e73"
+      "bytes": 877,
+      "sha256": "3a7994e92d2d577cd865fa0025c08cecd4f5016ddf570c55e81bf6a637ef47c6"
+    },
+    {
+      "path": "common/transformers/slides/transformer-from-scratch.en.pdf",
+      "source": "common/transformers/slides/transformer-from-scratch.ko.pdf",
+      "language": "en",
+      "role": "presentation",
+      "bytes": 5466513,
+      "sha256": "68048b77e2b4b6ae8bc8a6adeb8e3fd9714fb8120b58ecec06fe8fd0c02aa59e"
     },
     {
       "path": "common/transformers/slides/transformer-from-scratch.ko.pdf",
@@ -168,6 +272,14 @@
       "role": "presentation",
       "bytes": 5469147,
       "sha256": "c18652d9cfb10fc1381dbf4753f93ed93f914f6f63955c338ed63b77acf12bf4"
+    },
+    {
+      "path": "common/transformers/teaching-notes.en.md",
+      "source": "common/transformers/teaching-notes.ko.md",
+      "language": "en",
+      "role": "speaker notes",
+      "bytes": 34410,
+      "sha256": "df448b38dd0a3e3482fdc029e0078b7b61661f44fb455e2fd786c65cfb49255b"
     },
     {
       "path": "common/transformers/teaching-notes.ko.md",
@@ -190,8 +302,8 @@
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 1331,
-      "sha256": "0bb23713de7c0e940ce8fea1f0fc0083065be81904d41221a9f6f7061d86a9fa"
+      "bytes": 1500,
+      "sha256": "272c46b2f0a5a282fc61239092b5ae361935aa790a7c3762762e8f9b8c423161"
     },
     {
       "path": "docs/optional-lab-validation.md",
@@ -206,16 +318,16 @@
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 1413,
-      "sha256": "77dda5ec90139a3db9aafcb93632b3aca81f6ef2ade1b640cc1dd1ecedfa3ab2"
+      "bytes": 2372,
+      "sha256": "53ef6e96e6ecbf1992dfa4794117f49b3e151530a1b50d22c91305eff7099386"
     },
     {
       "path": "docs/sources.md",
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 3124,
-      "sha256": "cb5bd4d58b11f3977e2c76e8c493649e145495357c908583d99070b7ae20cc90"
+      "bytes": 3135,
+      "sha256": "10ca50c1381b3b2fa20291feb2922dd4a869e330b35f3b4fbb84a252230ba1b1"
     },
     {
       "path": "LICENSE",
@@ -234,12 +346,20 @@
       "sha256": "7f686732712a663e19deb94db080b103a1018161fa37da86243fb81759553d05"
     },
     {
+      "path": "README.ko.md",
+      "source": "README.md",
+      "language": "ko",
+      "role": "repository support",
+      "bytes": 3484,
+      "sha256": "f5101f77e679425f1bdcec72d3767f9c9e3686a33a98a64a28cc730a444878ed"
+    },
+    {
       "path": "README.md",
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 6680,
-      "sha256": "ec319ce7225617fe49d639d2dfc1b5766b4f24c87c2f68d1eb436ea8a6eff4f3"
+      "bytes": 7102,
+      "sha256": "b88b53735a6dd6b5bb18cd6bf348dea4c0f27c09970f5f749bf9790dec015306"
     },
     {
       "path": "third_party/optional-labs.LICENSE.txt",
@@ -262,8 +382,16 @@
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 6608,
-      "sha256": "b9968bdf33c27c710b8d5d302fd1a1bc930efa28de8f06438d5756a250b98070"
+      "bytes": 7162,
+      "sha256": "1241d2d0c6ccec419e97224c25a9527d2a7a9b73181c0b2a961ec6b5011c3509"
+    },
+    {
+      "path": "tools/check_translations.py",
+      "source": "OZ Lab",
+      "language": "en",
+      "role": "repository support",
+      "bytes": 4723,
+      "sha256": "172a13c6b930ffa6990e0b58e4b9eba1065062cbdbe627ea65522f0f04fba0ca"
     },
     {
       "path": "tools/requirements.txt",
@@ -290,12 +418,28 @@
       "sha256": "c14b8b855ea7ee86cb9736bf8caaf281c4685ca08826f3eb2acaccaaf40f0d5a"
     },
     {
+      "path": "weekly/week-01/demos/cost-function.legacy.en.html",
+      "source": "weekly/week-01/demos/cost-function.legacy.ko.html",
+      "language": "en",
+      "role": "earlier standalone demonstration",
+      "bytes": 19845,
+      "sha256": "f6965e80c5bc3b5956c3f6e0ecddd0ef71d83c3fce1df624f0d383eb16ad5de0"
+    },
+    {
       "path": "weekly/week-01/demos/cost-function.legacy.ko.html",
       "source": "outputs/Cost_Function_Interactive_Korean.html",
       "language": "ko",
       "role": "earlier standalone demonstration",
       "bytes": 21371,
       "sha256": "e2705d2cf73c629c8ee2e6434e02aa03b556d3117043fb8507e40856ea96e2b4"
+    },
+    {
+      "path": "weekly/week-01/handouts/concept-check.en.pdf",
+      "source": "weekly/week-01/handouts/concept-check.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 27689,
+      "sha256": "1079a80063e1935ab7f7a8f38292d198dc6c99f7c0c963d1a2435b589dfa08a1"
     },
     {
       "path": "weekly/week-01/handouts/concept-check.ko.pdf",
@@ -306,12 +450,28 @@
       "sha256": "7b7ca356c4510d25ace8476053e84df8ed7571582f373d1bcb36773132d42f1d"
     },
     {
+      "path": "weekly/week-01/handouts/cost-function.answers.en.pdf",
+      "source": "weekly/week-01/handouts/cost-function.answers.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 398280,
+      "sha256": "9578877d760e083b28ff4785a550dce92dbbe7887e9fc0ea6bc6e7473e068d40"
+    },
+    {
       "path": "weekly/week-01/handouts/cost-function.answers.ko.pdf",
       "source": "output/pdf/Cost_Surface_Hand_Worksheet_Answer_Key.pdf",
       "language": "ko",
       "role": "PDF handout",
       "bytes": 416040,
       "sha256": "1452b7a4b0986058c30da6b306bba20260f70694a117f4f581e9efae4883f385"
+    },
+    {
+      "path": "weekly/week-01/handouts/cost-function.worksheet.en.pdf",
+      "source": "weekly/week-01/handouts/cost-function.worksheet.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 381110,
+      "sha256": "0542c941ecca968617c932870ff0403403248223da362202e2fbd54d67c89eae"
     },
     {
       "path": "weekly/week-01/handouts/cost-function.worksheet.ko.pdf",
@@ -322,6 +482,14 @@
       "sha256": "40a6241aa6f4c67dc66f939a5343643a0db7a89e84343adb0974c386f7fb747a"
     },
     {
+      "path": "weekly/week-01/handouts/gradient-descent.answers.en.pdf",
+      "source": "weekly/week-01/handouts/gradient-descent.answers.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 74170,
+      "sha256": "38f169065d5f8bd0a1fdb3f4f8214cc25b157e4a4bf2a6abbd1bc21a65283139"
+    },
+    {
       "path": "weekly/week-01/handouts/gradient-descent.answers.ko.pdf",
       "source": "output/pdf/Implementing_Gradient_Descent_Answer_Key.pdf",
       "language": "ko",
@@ -330,12 +498,28 @@
       "sha256": "c8f60977c692169322c243b9c1d89bcfd7af8e6ec7e95a35d53e9e887cca511c"
     },
     {
+      "path": "weekly/week-01/handouts/gradient-descent.worksheet.en.pdf",
+      "source": "weekly/week-01/handouts/gradient-descent.worksheet.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 60342,
+      "sha256": "8b543d67934b8898854f049940556de21bfa3f6e62371d4fb60c41707a3ce75c"
+    },
+    {
       "path": "weekly/week-01/handouts/gradient-descent.worksheet.ko.pdf",
       "source": "output/pdf/Implementing_Gradient_Descent_Worksheet.pdf",
       "language": "ko",
       "role": "PDF handout",
       "bytes": 75162,
       "sha256": "237913d927d88cf2100793ede8c135b702f37d9519a6d215ad73f4eb961baa9f"
+    },
+    {
+      "path": "weekly/week-01/notebooks/cost-function.interactive.en.ipynb",
+      "source": "weekly/week-01/notebooks/cost-function.interactive.ko.ipynb",
+      "language": "en",
+      "role": "cell-by-cell Colab lab",
+      "bytes": 22867,
+      "sha256": "9ef55ac8b879c7cdcc034a39239b9e770fe8196fdf8a87f351111b77a20f0af0"
     },
     {
       "path": "weekly/week-01/notebooks/cost-function.interactive.ko.ipynb",
@@ -350,24 +534,48 @@
       "source": "outputs/MLS_C1_W1_W2_W3_Answer_Key.ipynb",
       "language": "en",
       "role": "weekly Colab notebook",
-      "bytes": 95066,
-      "sha256": "1096d578e06fa1a4fcaea0ea783cbeb646e92c2567fc451ec5d1fdb8f9088d69"
+      "bytes": 95065,
+      "sha256": "f5e9ddfb99dac32780093a69484c5906c0edf334e78fe5fe3d77036e8c25d61c"
+    },
+    {
+      "path": "weekly/week-01/notebooks/optional-labs.answers.ko.ipynb",
+      "source": "weekly/week-01/notebooks/optional-labs.answers.ipynb",
+      "language": "ko",
+      "role": "weekly Colab notebook",
+      "bytes": 98085,
+      "sha256": "4715d52ae06058ed19536ff4779110b5de24111836d7afc36f9b8f9b6ad36082"
     },
     {
       "path": "weekly/week-01/notebooks/optional-labs.student.ipynb",
       "source": "work/optional_labs/symbol_checked.ipynb",
       "language": "en",
       "role": "weekly Colab notebook",
-      "bytes": 90994,
-      "sha256": "e0feac73555c11e1a4be06c20609b4c1bd671c7c34ef85bdd5ebb7a10415e524"
+      "bytes": 90993,
+      "sha256": "89cdc6be4846ee56e857507966103ea68473894984e25bd729c990b550d4b38d"
+    },
+    {
+      "path": "weekly/week-01/notebooks/optional-labs.student.ko.ipynb",
+      "source": "weekly/week-01/notebooks/optional-labs.student.ipynb",
+      "language": "ko",
+      "role": "weekly Colab notebook",
+      "bytes": 94431,
+      "sha256": "3e1e68d39199bad3dbd2f78ab6e1e4b8d78e56a4ef54123e78b9574fe249f983"
     },
     {
       "path": "weekly/week-01/README.md",
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 2167,
-      "sha256": "71f675267b0d577da654c55429efe4f2575d63682e560508a6d6e499960842a4"
+      "bytes": 3108,
+      "sha256": "8633496e2eb7eab610372055328302edd2d499126e3bbd8fde87bca845cb2bf8"
+    },
+    {
+      "path": "weekly/week-01/source/concept-check.en.tex",
+      "source": "weekly/week-01/source/concept-check.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 6866,
+      "sha256": "159356f7f87dab2c6358561502830a9eb1dc2b902e56763395dccbbb7a01c0ba"
     },
     {
       "path": "weekly/week-01/source/concept-check.ko.tex",
@@ -378,12 +586,28 @@
       "sha256": "be96b0f1ed13281dec3e6b56e71e59d67b72b074dff74c600ae1cdfc1d93822c"
     },
     {
+      "path": "weekly/week-01/source/cost-function.answers.en.tex",
+      "source": "weekly/week-01/source/cost-function.answers.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 22638,
+      "sha256": "ab36fed697982c479d04bca3cc405f5282bd02e426ba21ed767206f952093d82"
+    },
+    {
       "path": "weekly/week-01/source/cost-function.answers.ko.tex",
       "source": "output/pdf/Cost_Surface_Hand_Worksheet_Answer_Key.tex",
       "language": "ko",
       "role": "LaTeX source",
       "bytes": 23044,
       "sha256": "725988725873cc590f88ef7d9b1d1b40f62e61c0369d993cfd36e7d7b16c753a"
+    },
+    {
+      "path": "weekly/week-01/source/cost-function.worksheet.en.tex",
+      "source": "weekly/week-01/source/cost-function.worksheet.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 17151,
+      "sha256": "15e0ce6300e35aadd0fef1a026aa64e0f2358c10882eaddd4943d6a17df82993"
     },
     {
       "path": "weekly/week-01/source/cost-function.worksheet.ko.tex",
@@ -434,12 +658,28 @@
       "sha256": "e8a85b1189ba83f13145ecf0a1246d745ca6ec1f1ad27876f2854db324b4b45a"
     },
     {
+      "path": "weekly/week-01/source/gradient-descent.answers.en.tex",
+      "source": "weekly/week-01/source/gradient-descent.answers.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 37403,
+      "sha256": "3171284451d1c0ab8ee8c805efb8fcf5909291da8e0349db06189613a5c5094b"
+    },
+    {
       "path": "weekly/week-01/source/gradient-descent.answers.ko.tex",
       "source": "output/pdf/Implementing_Gradient_Descent_Answer_Key.tex",
       "language": "ko",
       "role": "LaTeX source",
       "bytes": 37853,
       "sha256": "d9f6bcb8aea2b7d77b101d74ac24adbb98001dfd0717377669b521467ad025b2"
+    },
+    {
+      "path": "weekly/week-01/source/gradient-descent.worksheet.en.tex",
+      "source": "weekly/week-01/source/gradient-descent.worksheet.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 35948,
+      "sha256": "e0ecd9a6a5a64985f71d720016f37be0b42c49d9b8954d4a11b6fb2693465608"
     },
     {
       "path": "weekly/week-01/source/gradient-descent.worksheet.ko.tex",
@@ -450,12 +690,28 @@
       "sha256": "3bbf7a038db938516a5f9ecba5c9084e0fd8ede9899592d5584e1b92dde22086"
     },
     {
+      "path": "weekly/week-01/teaching-notes.en.md",
+      "source": "weekly/week-01/teaching-notes.ko.md",
+      "language": "en",
+      "role": "weekly speaker notes",
+      "bytes": 52786,
+      "sha256": "2cbab4461ccdb9e93d29af41a53b3b5d18c4686880e0ae5ef29e0f4e71af185f"
+    },
+    {
       "path": "weekly/week-01/teaching-notes.ko.md",
       "source": "outputs/MLS_C1_W1_W2_W3_Korean_Script_Detailed.md",
       "language": "ko",
       "role": "weekly speaker notes",
       "bytes": 56943,
       "sha256": "89a5df2a8c5f7508a1fab00ea249ec758c987fa8dae5c194a7eec3a2805fe920"
+    },
+    {
+      "path": "weekly/week-02/handouts/concept-check.en.pdf",
+      "source": "weekly/week-02/handouts/concept-check.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 31815,
+      "sha256": "eeecf1b89f5cefe621575ca4567e9e5a3c2b46097b91d28886229bd3e15a4acb"
     },
     {
       "path": "weekly/week-02/handouts/concept-check.ko.pdf",
@@ -466,12 +722,28 @@
       "sha256": "704e4a9fa18979d9b373f26f53dc27c9090733a69e058e93febc14e1d4f0a341"
     },
     {
+      "path": "weekly/week-02/handouts/multiple-regression.answers.en.pdf",
+      "source": "weekly/week-02/handouts/multiple-regression.answers.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 100467,
+      "sha256": "25dae1231b737be66b838492ed73fc3d1f8731cde2dd1fc7a6101dc425bd2074"
+    },
+    {
       "path": "weekly/week-02/handouts/multiple-regression.answers.ko.pdf",
       "source": "output/pdf/Multiple_Regression_Feature_Scaling_Answer_Key.pdf",
       "language": "ko",
       "role": "PDF handout",
       "bytes": 123447,
       "sha256": "17f9f54df897943e42dbf716b2b4160439f109df895fa88298722184221bcd7b"
+    },
+    {
+      "path": "weekly/week-02/handouts/multiple-regression.worksheet.en.pdf",
+      "source": "weekly/week-02/handouts/multiple-regression.worksheet.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 88477,
+      "sha256": "c2e942d36a5f5f3cd0232d1d968b30e9fb07141643b0a19bc7ba7af9504722c2"
     },
     {
       "path": "weekly/week-02/handouts/multiple-regression.worksheet.ko.pdf",
@@ -486,24 +758,48 @@
       "source": "outputs/MLS_C1_W1_W2_W3_Answer_Key.ipynb",
       "language": "en",
       "role": "weekly Colab notebook",
-      "bytes": 183277,
-      "sha256": "94ae143fb0d121f79196a95594808d4784fb609350dfd1ac125afa4e44936408"
+      "bytes": 183344,
+      "sha256": "1d258241c69ab80a927785be4c6889840405bae196ed1b76befd20104624558a"
+    },
+    {
+      "path": "weekly/week-02/notebooks/optional-labs.answers.ko.ipynb",
+      "source": "weekly/week-02/notebooks/optional-labs.answers.ipynb",
+      "language": "ko",
+      "role": "weekly Colab notebook",
+      "bytes": 190141,
+      "sha256": "2388d65c6b6a5f767b1ab7054b28a487a2f79a0b60b61588efada71ea613dc82"
     },
     {
       "path": "weekly/week-02/notebooks/optional-labs.student.ipynb",
       "source": "work/optional_labs/symbol_checked.ipynb",
       "language": "en",
       "role": "weekly Colab notebook",
-      "bytes": 183455,
-      "sha256": "0916825fe5ec4c11e25f220997989b45b972dd308ed2040818949950e21a7953"
+      "bytes": 183522,
+      "sha256": "24d1053ddd5478c272e95e43ba5eda7ce708146a0da5d14dd8baac6536e28770"
+    },
+    {
+      "path": "weekly/week-02/notebooks/optional-labs.student.ko.ipynb",
+      "source": "weekly/week-02/notebooks/optional-labs.student.ipynb",
+      "language": "ko",
+      "role": "weekly Colab notebook",
+      "bytes": 191289,
+      "sha256": "f2ce0b182607b4e7ab1362c73c399d6e9f0311cf5f98a683b0e02ee7bdf54a2e"
     },
     {
       "path": "weekly/week-02/README.md",
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 1415,
-      "sha256": "1c20b7a28bdfaee98ebbcff91cf339ec4b85bbe9060c29743e79aba54e5923da"
+      "bytes": 1910,
+      "sha256": "76f6fa0605fdbd2e1a613395c3ec5eec205de6f5b4f7c9b6bb0f16d1f6eee7a6"
+    },
+    {
+      "path": "weekly/week-02/source/concept-check.en.tex",
+      "source": "weekly/week-02/source/concept-check.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 7185,
+      "sha256": "ebbfd9967e1e9714a16c276df83a7590aefa3b3cf79e6c6955efccd33d685009"
     },
     {
       "path": "weekly/week-02/source/concept-check.ko.tex",
@@ -514,6 +810,14 @@
       "sha256": "15cf3ba3f8854d0ac32347ac2a403ea3cf13fb5bafe9f29415dba29a5263a8ab"
     },
     {
+      "path": "weekly/week-02/source/multiple-regression.answers.en.tex",
+      "source": "weekly/week-02/source/multiple-regression.answers.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 68758,
+      "sha256": "649efd7bacbd41e44fbe7ccb35a2493fc1c0820e965ec72c8d34e54ce56e7e91"
+    },
+    {
       "path": "weekly/week-02/source/multiple-regression.answers.ko.tex",
       "source": "output/pdf/Multiple_Regression_Feature_Scaling_Answer_Key.tex",
       "language": "ko",
@@ -522,12 +826,28 @@
       "sha256": "4e3805309bf0a6cc7b833625faeec3951b67e45443cec4b994569d129711f43f"
     },
     {
+      "path": "weekly/week-02/source/multiple-regression.worksheet.en.tex",
+      "source": "weekly/week-02/source/multiple-regression.worksheet.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 68759,
+      "sha256": "a5dbff73adc3b9c424f93b8bf5bb1d81c31483e193d541d2b53ab34856688279"
+    },
+    {
       "path": "weekly/week-02/source/multiple-regression.worksheet.ko.tex",
       "source": "output/pdf/Multiple_Regression_Feature_Scaling_Worksheet.tex",
       "language": "ko",
       "role": "LaTeX source",
       "bytes": 69497,
       "sha256": "284eed02896298b2491510d03b2868f879790f9d0fce251ea26e087042358183"
+    },
+    {
+      "path": "weekly/week-02/teaching-notes.en.md",
+      "source": "weekly/week-02/teaching-notes.ko.md",
+      "language": "en",
+      "role": "weekly speaker notes",
+      "bytes": 25376,
+      "sha256": "f3745731f3395eaa1d18ca928424d084d28200d7e073f1c113c9f5140341d086"
     },
     {
       "path": "weekly/week-02/teaching-notes.ko.md",
@@ -546,6 +866,14 @@
       "sha256": "b8459546a731b71bdcddad767cf4d75ea2c1cd952fb56ae889d595616d58005e"
     },
     {
+      "path": "weekly/week-03/handouts/concept-check.en.pdf",
+      "source": "weekly/week-03/handouts/concept-check.ko.pdf",
+      "language": "en",
+      "role": "PDF handout",
+      "bytes": 28136,
+      "sha256": "d80ea1bed70039a500f3c25daa58bd179aad4b1c48c5e1f8be3befb852c2cd84"
+    },
+    {
       "path": "weekly/week-03/handouts/concept-check.ko.pdf",
       "source": "output/pdf/MLS_W3_Concept_Check.pdf",
       "language": "ko",
@@ -554,44 +882,84 @@
       "sha256": "b8b69b595556c759d7bcee8d9283d72deaad2aa4aeb283ca5c0e0bf33dc2f8c5"
     },
     {
-      "path": "weekly/week-03/handouts/sigmoid-logistic.answers.ko.pdf",
-      "source": "OZ Lab",
+      "path": "weekly/week-03/handouts/sigmoid-logistic.answers.en.pdf",
+      "source": "weekly/week-03/handouts/sigmoid-logistic.answers.ko.pdf",
       "language": "en",
       "role": "repository support",
-      "bytes": 145708,
-      "sha256": "307bbeaf3b1460285239d7ae3207e77fd153049b196575c593e26b9ce1c4044f"
+      "bytes": 123286,
+      "sha256": "5fb7a05e9cb06873c038b401ba55f898769320092fceeb328eaca9ee569c63c4"
+    },
+    {
+      "path": "weekly/week-03/handouts/sigmoid-logistic.answers.ko.pdf",
+      "source": "OZ Lab",
+      "language": "ko",
+      "role": "repository support",
+      "bytes": 142934,
+      "sha256": "8942150d4c4ef346bd972411dd2bc5123dacfdb2266df7a826ff83bf36bd9a69"
+    },
+    {
+      "path": "weekly/week-03/handouts/sigmoid-logistic.worksheet.en.pdf",
+      "source": "weekly/week-03/handouts/sigmoid-logistic.worksheet.ko.pdf",
+      "language": "en",
+      "role": "repository support",
+      "bytes": 81152,
+      "sha256": "620f719555d64f428e44ba3ba76417646e43b3691350e18b7d4a4b85caea0ed6"
     },
     {
       "path": "weekly/week-03/handouts/sigmoid-logistic.worksheet.ko.pdf",
       "source": "OZ Lab",
-      "language": "en",
+      "language": "ko",
       "role": "repository support",
-      "bytes": 99203,
-      "sha256": "ec1a1d6c2348785e5bab18b70242d1513053f9c66ceba47253a14f5f8428d3be"
+      "bytes": 96432,
+      "sha256": "dc3751436db4afbe5e24e3717362d5191610aa5e58e4e70ede214047eaf76916"
     },
     {
       "path": "weekly/week-03/notebooks/optional-labs.answers.ipynb",
       "source": "outputs/MLS_C1_W1_W2_W3_Answer_Key.ipynb",
       "language": "en",
       "role": "weekly Colab notebook",
-      "bytes": 147891,
-      "sha256": "78248e9f09835ea769213180adcf906459e7807924798045d04d9ba12a8b4515"
+      "bytes": 147890,
+      "sha256": "3f68ae3c823427a11ad473c8f45d7f659fa1d3d5e39f502deed729880ecd82e0"
+    },
+    {
+      "path": "weekly/week-03/notebooks/optional-labs.answers.ko.ipynb",
+      "source": "weekly/week-03/notebooks/optional-labs.answers.ipynb",
+      "language": "ko",
+      "role": "weekly Colab notebook",
+      "bytes": 154402,
+      "sha256": "82e54c0eba65cd00bec01161772d327de66ee6e458b62c8446752ad70a4dc69d"
     },
     {
       "path": "weekly/week-03/notebooks/optional-labs.student.ipynb",
       "source": "work/optional_labs/symbol_checked.ipynb",
       "language": "en",
       "role": "weekly Colab notebook",
-      "bytes": 148403,
-      "sha256": "961c8787eefc4aca4722720439b60497cf45b6eb1bf6c69b9a14594c975ed8da"
+      "bytes": 148402,
+      "sha256": "4df6e91a2aa9d8093d7f2d0bfade0860188e7bdde4d2ae2386aab94a4559564f"
+    },
+    {
+      "path": "weekly/week-03/notebooks/optional-labs.student.ko.ipynb",
+      "source": "weekly/week-03/notebooks/optional-labs.student.ipynb",
+      "language": "ko",
+      "role": "weekly Colab notebook",
+      "bytes": 155677,
+      "sha256": "cc2b2405e76587d1eaa04b13a92238e1caa107deaf2781dd52151152691bee35"
     },
     {
       "path": "weekly/week-03/README.md",
       "source": "OZ Lab",
       "language": "en",
       "role": "repository support",
-      "bytes": 1773,
-      "sha256": "1940f95321ec5351fa53c6b869bca43ae110fa681a14927fc0c8e6fd8cd66e3c"
+      "bytes": 2290,
+      "sha256": "0bf4cd48b69a4cf0a9f90bd61a86a6f0c1485b15ee3ace2344f9f6a612825115"
+    },
+    {
+      "path": "weekly/week-03/source/concept-check.en.tex",
+      "source": "weekly/week-03/source/concept-check.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 7079,
+      "sha256": "1290e0b4ce87771ea8368c472dbce88aeb8704f809d2af78dd84af306189cda0"
     },
     {
       "path": "weekly/week-03/source/concept-check.ko.tex",
@@ -602,20 +970,44 @@
       "sha256": "ce63a02ac05a4076716fcd8b84741fac89a1cd63a311b34bc394168a899e999c"
     },
     {
+      "path": "weekly/week-03/source/sigmoid-logistic.answers.en.tex",
+      "source": "weekly/week-03/source/sigmoid-logistic.answers.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 99049,
+      "sha256": "8fc33ff8723a0226be192ff032173a9c612a08d1213aa73b3d38983a413e5f7c"
+    },
+    {
       "path": "weekly/week-03/source/sigmoid-logistic.answers.ko.tex",
       "source": "output/pdf/Sigmoid_Logistic_Regression_Answer_Key.tex",
       "language": "ko",
       "role": "LaTeX source",
-      "bytes": 99641,
-      "sha256": "ea380b9b846730cd8aee1dbac7e1579d888702fa2c1929e9a731e350f19023d6"
+      "bytes": 99647,
+      "sha256": "942cfd6f6c9d42b6c3c66181083c8e38aeae2db511a1a5591a9c4da09e75ff1d"
+    },
+    {
+      "path": "weekly/week-03/source/sigmoid-logistic.worksheet.en.tex",
+      "source": "weekly/week-03/source/sigmoid-logistic.worksheet.ko.tex",
+      "language": "en",
+      "role": "LaTeX source",
+      "bytes": 99050,
+      "sha256": "ca006a3703dafe95a134d2f7b485d95f829cd0532eb703a803e19ab1ef1ce063"
     },
     {
       "path": "weekly/week-03/source/sigmoid-logistic.worksheet.ko.tex",
       "source": "output/pdf/Sigmoid_Logistic_Regression_Worksheet.tex",
       "language": "ko",
       "role": "LaTeX source",
-      "bytes": 99642,
-      "sha256": "18051fbd4be9c774ff6807c9eb16574e13f1c3758807d36cddddc02389785c97"
+      "bytes": 99648,
+      "sha256": "8da787bfb00e931a03bea81a703e66c2f0b8b96bd3772905eed0c432fa3845fd"
+    },
+    {
+      "path": "weekly/week-03/teaching-notes.en.md",
+      "source": "weekly/week-03/teaching-notes.ko.md",
+      "language": "en",
+      "role": "weekly speaker notes",
+      "bytes": 36438,
+      "sha256": "76a42f299e6aa2684888eccb1d28562084bb4b5aef05db82d043d1b789bcd578"
     },
     {
       "path": "weekly/week-03/teaching-notes.ko.md",

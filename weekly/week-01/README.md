@@ -4,12 +4,12 @@ Calculate predictions and compare them with targets. Turn those errors into a co
 
 ## Handouts
 
-| Activity | Student PDF | Worked answers |
-| :--- | :--- | :--- |
-| Cost function and cost surface | [Worksheet](handouts/cost-function.worksheet.ko.pdf) | [Answer key](handouts/cost-function.answers.ko.pdf) |
-| Implementing gradient descent | [Worksheet](handouts/gradient-descent.worksheet.ko.pdf) | [Answer key](handouts/gradient-descent.answers.ko.pdf) |
+| Activity | English worksheet | English answers | 한국어 문제 | 한국어 풀이 |
+| :--- | :--- | :--- | :--- | :--- |
+| Cost function and cost surface | [PDF](handouts/cost-function.worksheet.en.pdf) | [PDF](handouts/cost-function.answers.en.pdf) | [PDF](handouts/cost-function.worksheet.ko.pdf) | [PDF](handouts/cost-function.answers.ko.pdf) |
+| Implementing gradient descent | [PDF](handouts/gradient-descent.worksheet.en.pdf) | [PDF](handouts/gradient-descent.answers.en.pdf) | [PDF](handouts/gradient-descent.worksheet.ko.pdf) | [PDF](handouts/gradient-descent.answers.ko.pdf) |
 
-[Concept check](handouts/concept-check.ko.pdf): ten multiple-choice questions, a pseudocode debugging exercise, and an open-response question.
+Concept check: [English](handouts/concept-check.en.pdf) · [한국어](handouts/concept-check.ko.pdf). Ten multiple-choice questions, a pseudocode debugging exercise, and an open-response question.
 
 The cost-surface worksheet uses eight input/target pairs. The gradient-descent worksheet uses five hand-calculated steps for each learning rate, in the order **divergence, very slow movement, convergence**, with one large `w, J(w)` graph for each case. Red answers show the intermediate calculations.
 
@@ -21,8 +21,12 @@ The cost-surface worksheet uses eight input/target pairs. The gradient-descent w
 | Four optional labs, answer edition | [Open in Colab](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-01/notebooks/optional-labs.answers.ipynb) |
 | Cell-by-cell cost-function exploration | [Open in Colab](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-01/notebooks/cost-function.interactive.ko.ipynb) |
 
-The optional labs are in English. The interactive cost lab is in Korean and uses eight actual Auto MPG observations, comparing targets, predictions, and errors with different colors. Run its cells in order before using the sliders.
+한국어 Optional Labs: [학생용](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-01/notebooks/optional-labs.student.ko.ipynb) · [답안](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-01/notebooks/optional-labs.answers.ko.ipynb)
 
-[Teaching notes](teaching-notes.ko.md) · [LaTeX source and figure assets](source/) · [Dataset](data/auto-mpg.csv)
+English interactive cost lab: [Open in Colab](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-01/notebooks/cost-function.interactive.en.ipynb)
 
-The earlier [standalone HTML demonstration](demos/cost-function.legacy.ko.html) is preserved as an archive. Use the cell-by-cell Colab for the classroom activity.
+The optional labs and interactive cost lab have both English and Korean explanations. The interactive lab uses eight actual Auto MPG observations, comparing targets, predictions, and errors with different colors. Run its cells in order before using the sliders.
+
+[English teaching notes](teaching-notes.en.md) · [한국어 강의 노트](teaching-notes.ko.md) · [LaTeX source and figure assets](source/) · [Dataset](data/auto-mpg.csv)
+
+The earlier standalone HTML demonstration is archived in [English](demos/cost-function.legacy.en.html) and [한국어](demos/cost-function.legacy.ko.html). Use the cell-by-cell Colab for the classroom activity.

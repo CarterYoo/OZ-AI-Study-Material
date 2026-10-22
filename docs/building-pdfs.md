@@ -25,6 +25,7 @@ The builder runs XeLaTeX twice, keeps intermediate files under `.build/`, and wr
 ```sh
 python -m pip install -r tools/requirements.txt
 python tools/check_materials.py
+python tools/check_translations.py
 ```
 
-The check validates notebook schemas, the weekly notebook split, exercise counts, PDF readability, slide packages, relative documentation links, and catalog checksums. It also checks the revised sigmoid dataset and its fitted lines. It does not run unfinished student notebooks or simulate every plot interaction.
+The checks validate notebook schemas, weekly splits, exercise counts, PDF readability, slide packages, relative documentation links, and catalog checksums. They also compare language editions for question counts, drawing commands, notebook equations, and unchanged executable lab cells. The revised sigmoid dataset and fitted lines are checked independently. These checks do not run unfinished student notebooks or simulate every plot interaction.

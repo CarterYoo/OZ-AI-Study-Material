@@ -1,0 +1,125 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=20mm,top=19mm,bottom=20mm]{geometry}
+\usepackage{fontspec,amsmath,amssymb,xcolor,enumitem,fancyhdr}
+\setmainfont{NotoSansKR-Regular.ttf}[Path=../../../common/assets/fonts/,BoldFont=NotoSansKR-Semibold.ttf]
+\setmonofont{Latin Modern Mono}
+\definecolor{ink}{HTML}{203B50}
+\definecolor{rulegray}{HTML}{D2D9DF}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Machine Learning Concept Check}\fancyhead[R]{\small W2}
+\fancyfoot[C]{\small\thepage\ / 4}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\linespread{1.2}
+\newcommand{\parttitle}[2]{{\large\bfseries\color{ink} #1}\par{\small #2}\par\vspace{5mm}}
+\newcommand{\question}[2]{\textbf{#1.} #2\par}
+\newcommand{\answerlines}[1]{\foreachline{#1}}
+\newcount\linecount
+\newcommand{\foreachline}[1]{\linecount=0\loop\ifnum\linecount<#1\vspace{8mm}\par{\color{rulegray}\hrule}\advance\linecount by1\repeat}
+\begin{document}
+
+{\LARGE\bfseries\color{ink} W2 · Regression with Multiple Features}\par
+{\small Multiple linear regression · Vectorization · Feature scaling · Polynomial features}\par
+\vspace{3mm}Name\enspace\rule{43mm}{0.3pt}\hfill Date\enspace\rule{35mm}{0.3pt}\par\vspace{3mm}
+\parttitle{1. Concept Check}{Choose the single best answer for each question.}
+\question{1}{You want to predict house prices using size, room count, and house age. Which description is most appropriate?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item Copying the target price three times
+\item Necessarily keeping only one of the three features
+\item Removing the cost function
+\item Representing one house using multiple input features
+\end{enumerate}\vfill
+\question{2}{In $\hat y=w_1x_1+w_2x_2+b$, what does each weight do?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item Controls how much its feature contributes to the prediction
+\item Determines the name of its feature
+\item Determines only the number of data rows
+\item Changes the actual target arbitrarily
+\end{enumerate}\vfill
+\question{3}{If $x=(2,3)$, $w=(4,1)$, and $b=1$, what is $\hat y=w^Tx+b$?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item $10$
+\item $11$
+\item $12$
+\item $14$
+\end{enumerate}\vfill
+\question{4}{What is the main reason to use vectorization?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item To train on different targets
+\item To express the same calculation concisely and efficiently with array operations
+\item To replace every feature with one constant
+\item To guarantee zero model error
+\end{enumerate}\vfill
+\question{5}{House size is measured in thousands, while room count is a single digit. Why apply feature scaling before gradient descent?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item To make all actual house prices equal
+\item To remove features with small values
+\item To make size and room count mean the same thing
+\item To reduce differences in numerical ranges and help training progress smoothly
+\end{enumerate}\vfill
+\newpage
+\parttitle{1. Concept Check / Continued}{Choose the single best answer for each question.}
+\question{6}{A feature has mean $10$ and standard deviation $2$. What is the standardized value of $14$ using $(x-\mu)/\sigma$?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item $2$
+\item $4$
+\item $7$
+\item $12$
+\end{enumerate}\vfill
+\question{7}{You standardize a new house for prediction. Which mean and standard deviation should you use?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item Values calculated from only the new house
+\item New random values at each prediction
+\item The saved values calculated from the training data
+\item The mean and standard deviation of target prices
+\end{enumerate}\vfill
+\question{8}{During training, the cost keeps increasing and oscillating strongly. What should you try first?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item Increase the learning rate further
+\item Reduce the learning rate and monitor the cost
+\item Replace all actual targets with zero
+\item Stop recording the cost
+\end{enumerate}\vfill
+\question{9}{Price varies with house size $x$ along a curve. Which approach from this lesson could you try?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item Replace every input with 1
+\item Keep every weight fixed at 0
+\item Randomly change the target for the same input
+\item Add a new feature such as $x^2$
+\end{enumerate}\vfill
+\question{10}{Why can $\hat y=w_1x+w_2x^2+b$ be treated as linear regression even though it is curved with respect to $x$?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item The parameters $w_1,w_2,b$ enter linearly
+\item Every curve is a straight line
+\item Inputs must be 0 or 1
+\item The weights are not learned
+\end{enumerate}\vfill
+\newpage
+\parttitle{2. Think Like an ML Scientist}{Question 11 · Read the pseudocode and find why the model does not work as intended.}
+You predict house prices using size and room count. During training you standardized each feature and obtained a small training error. Predictions for new houses are unreasonable. Below, mu and sigma are the feature means and standard deviations, and every sigma is positive. The training function works correctly.
+\par\vspace{3mm}
+{\small\ttfamily\begin{tabular}{r l}
+1 & \hspace*{0.0mm}mu = column\_mean(X\_train) \\
+2 & \hspace*{0.0mm}sigma = column\_std(X\_train) \\
+3 & \hspace*{0.0mm}X\_scaled = (X\_train - mu) / sigma \\
+4 & \hspace*{0.0mm}w, b = fit\_linear(X\_scaled, y\_train) \\
+5 & \hspace*{0.0mm}x\_new = [1500, 3] \\
+6 & \hspace*{0.0mm}prediction = dot(x\_new, w) + b \\
+\end{tabular}}\par\vspace{5mm}
+\textbf{11(1)} Compare the training input with the prediction input. Explain which processing step is missing.
+\answerlines{5}
+\vspace{6mm}
+\textbf{11(2)} Add one preprocessing line and correct the final line. State which data should supply the statistics.
+\answerlines{5}
+\vspace{6mm}
+\newpage
+\parttitle{3. Open Question}{Question 12 · There is no single correct answer. Describe your method and reasoning.}
+A tool converts sentences into equal-length lists of numbers. You can also add sentence length and the number of exclamation marks as features. To find similar customer inquiries, which features would you use and how would you compare them?
+\par\vspace{3mm}
+Explain what you would do if the features have very different numerical ranges, and what you would compare before and after adding features. You may assume that you need to investigate what the numbers produced by the tool mean.
+\par\vspace{3mm}
+{\small Equations and code are optional. You may answer with text, a diagram, or a simple flowchart.}
+\answerlines{15}
+\vfill{\footnotesize These original practice questions are based on the corresponding week of Machine Learning Specialization, Course 1.}
+\end{document}

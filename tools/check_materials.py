@@ -25,7 +25,17 @@ if "--refresh-catalog" in sys.argv:
     records = {row["path"]: row for row in catalog["materials"]}
     for path in files:
         relative = path.relative_to(ROOT).as_posix()
-        row = records.get(relative, {"path": relative, "source": "OZ Lab", "language": "en", "role": "repository support"})
+        row = records.get(relative)
+        if row is None:
+            counterparts = [relative.replace(".en.", ".ko."), relative.replace(".en.", "."),
+                            relative.replace(".ko.", "."), relative.replace(".ko.", ".en.")]
+            original = next((records[p] for p in counterparts if p != relative and p in records), None)
+            row = {"path": relative, "source": original["path"] if original else "OZ Lab",
+                   "language": "en", "role": original["role"] if original else "repository support"}
+        if ".ko." in path.name:
+            row["language"] = "ko"
+        elif ".en." in path.name:
+            row["language"] = "en"
         row.update(bytes=path.stat().st_size, sha256=hashlib.sha256(path.read_bytes()).hexdigest())
         records[relative] = row
     catalog["materials"] = [records[p.relative_to(ROOT).as_posix()] for p in files]

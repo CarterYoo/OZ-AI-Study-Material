@@ -2,6 +2,8 @@
 
 # OZ AI Study Material
 
+[English](README.md) · [한국어](README.ko.md)
+
 Hands-on materials for students learning machine learning before building a Transformer from scratch. Start with a prediction you can calculate by hand, plot its error, and work toward models you can implement and inspect.
 
 **[Weekly materials](weekly/README.md)** · **[Common resources](common/README.md)** · **[Student Colab](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/common/course-1/notebooks/optional-labs.student.ipynb)** · **[Answer Colab](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/common/course-1/notebooks/optional-labs.answers.ipynb)**
@@ -12,7 +14,7 @@ Hands-on materials for students learning machine learning before building a Tran
 2. Open its student notebook in Colab. Run the two setup cells, then work through the labs in order. Each mathematical exercise needs one expression; the surrounding code is provided.
 3. Use the separate answer notebook and PDF answer keys to check your steps. Speaker notes are available for instructors.
 
-The optional labs run on a Colab CPU runtime. Student notebooks deliberately stop at unfinished `TODO(...)` expressions. Replace them before using **Run all**.
+Choose English or Korean on each material's page. The optional labs run on a Colab CPU runtime. Student notebooks deliberately stop at unfinished `TODO(...)` expressions. Replace them before using **Run all**.
 
 ## Weekly materials
 
@@ -30,14 +32,16 @@ Each week also contains a concept check, teaching notes, and editable LaTeX sour
 
 | Resource | Contents | Open |
 | :--- | :--- | :--- |
-| AI safety | An introduction to technical AI safety and a separate deck on technical approaches, with speaker notes and sources | [Materials](common/ai-safety/README.md) |
+| AI safety | Two decks in both languages, with full speaker notes and sources | [Materials](common/ai-safety/README.md) |
 | Linear algebra | A visual concept quiz with simple calculations, drawings, and a separate worked answer key | [Materials](common/linear-algebra/README.md) |
 | Course 1 | The combined annotated slide deck, detailed teaching notes, and all 19 optional labs in one notebook | [Materials](common/course-1/README.md) |
 | Transformers | A 24-slide introduction and beginner-oriented speaker notes | [Materials](common/transformers/README.md) |
 
 ## Languages and file formats
 
-Repository documentation, navigation, and the optional-lab notebooks are in **English**. The AI safety introduction is also in English. Existing Korean classroom handouts, teaching notes, and adapted decks are retained in Korean and marked `.ko` in their filenames. The combined course deck has English source slides with Korean speaker notes.
+The teaching materials are available in **Korean and English**, including the handouts, worked answers, detailed speaker notes, adapted presentations, and Colab explanations. Korean originals are retained. `.ko` and `.en` identify language editions; existing optional-lab notebooks without a language suffix are the English editions.
+
+Equations, datasets, examples, and worked steps are shared across translations. Executable code and its original comments remain in English in both notebook editions. The combined course slides retain their English source images and have separate Korean-note and English-note decks.
 
 | Format | Use |
 | :--- | :--- |
@@ -72,7 +76,7 @@ materials.json          File catalog and SHA-256 checksums
 
 The integrated labs were previously tested by filling all **81 mathematical exercises** in a separate copy and running **207 nonempty code cells** in order on a restarted Colab CPU runtime. Five gradient functions were checked independently with finite differences. See the [validation record](docs/optional-lab-validation.md) for the environment and limits of that run; it is not a guarantee for future library versions or every widget interaction.
 
-The public package also checks notebook structure, the weekly split, source dependencies, and matching worksheet data. The sigmoid worksheet and answer key use the same revised seven-point dataset, including a boundary-near exception.
+The public package also checks notebook structure, the weekly split, source dependencies, and matching worksheet data. The sigmoid worksheet and answer key use the same revised seven-point dataset, including a boundary-near exception. The full Course 1 English script preserves all 164 detailed sections and 1,215 source sentences.
 
 Course materials are based on Andrew Ng's Machine Learning Specialization from DeepLearning.AI and Stanford Online. Lab sources, 3Blue1Brown videos, datasets, and AI safety readings are listed in [sources and acknowledgments](docs/sources.md).
 

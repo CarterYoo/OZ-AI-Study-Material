@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6fa;color:#15283d;font:16px/1.65 system-ui,-apple-system,'Malgun Gothic',sans-serif}main{max-width:1240px;margin:auto;padding:24px}h1{font-size:28px;line-height:1.3;margin:0 0 10px}h2{font-size:20px;margin:0 0 8px}p{margin:8px 0}button{font:inherit;cursor:pointer;background:white;border:1px solid #bdcad6;border-radius:8px;padding:9px 14px;color:#15283d}button:disabled{opacity:.45;cursor:default}button.active{background:#163958;color:white;border-color:#163958}nav{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.card{background:white;border:1px solid #dae2eb;border-radius:12px;padding:20px;margin:14px 0}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.two .card{margin:0;min-width:0}.legend{display:flex;flex-wrap:wrap;gap:16px}.actual{color:#1768ad}.predicted{color:#c86600}.error{color:#8c439c}.contribution{color:#207454}.hint{background:#eaf1f8;padding:12px 16px;border-radius:8px}.controls{display:flex;gap:16px;align-items:center;flex-wrap:wrap}label{display:block}input[type=range]{width:240px;max-width:100%;accent-color:#163958;vertical-align:middle}output{display:inline-block;min-width:56px;font-variant-numeric:tabular-nums;font-weight:700}.formula{font-size:22px;line-height:2.2;text-align:center;overflow-x:auto}.fraction{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.4;margin:0 5px}.fraction>span:first-child{border-bottom:1px solid currentColor}.sigma{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.05;margin:0 7px}.sigma small{font-size:11px}.sigma b{font-size:32px;font-weight:400}svg{display:block;width:100%;height:auto}svg text{font:12px system-ui,'Malgun Gothic',sans-serif;fill:#32465b}table{width:100%;border-collapse:collapse;font-size:14px;text-align:right}th,td{padding:7px;border-bottom:1px solid #e4eaf0}th:first-child,td:first-child{text-align:left}.scroll{overflow:auto}.muted{font-size:14px;color:#536779}.numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.number{background:#f1f5f9;border-radius:8px;padding:10px}.number strong{display:block;font-size:24px}details{margin-top:14px}#stageTitle{font-size:22px}select{font:inherit;padding:6px}.chip{display:inline-block;padding:2px 9px;background:#e6edf4;border-radius:20px;font-size:13px}button:focus-visible,input:focus-visible{outline:3px solid #2681bf;outline-offset:3px}@media(max-width:760px){main{padding:12px}.two{grid-template-columns:1fr}h1{font-size:23px}.numbers{grid-template-columns:1fr}.formula{font-size:18px}.controls{gap:10px}}
+[hidden]{display:none!important}
+</style></head><body><main>
+<span class="chip">A lab for students learning cost functions</span>
+<h1>From one prediction line to one cost score</h1>
+<p>The left panel shows cars' <b>actual values and predictions</b>; the right evaluates those predictions using <b>cost</b>. Use the buttons and sliders to explore both panels together.</p>
+<div class="legend"><b class="actual">Blue = actual fuel economy y</b><b class="predicted">Orange × = predicted fuel economy ŷ</b><b class="error">Purple = prediction minus actual</b><b class="contribution">Green = squared-error contribution</b></div>
+<nav aria-label="Learning stages"><button id="mode1" class="active">1. Build cost one car at a time</button><button id="mode2">2. Change only w</button><button id="mode3">3. Change both w and b</button></nav>
+<section class="card"><h2 id="stageTitle"></h2><div id="intro"></div>
+<div class="formula">J(w,b) = <span class="fraction"><span>1</span><span>2m</span></span><span class="sigma"><small>m</small><b>Σ</b><small>i = 1</small></span>(<span class="predicted">f<sub>w,b</sub>(x<sup>(i)</sup>)</span> − <span class="actual">y<sup>(i)</sup></span>)<sup>2</sup></div>
+<p class="muted">m = 8 cars; i = car index. ŷ = f<sub>w,b</sub>(x) = wx + b. Mathematical i = 1 is the first car in the table.</p>
+<div class="controls"><label>Slope w <input id="w" type="range" min="-20" max="20" step="0.1" value="-5" aria-label="Slope w"><output id="wValue"></output></label><label>Intercept b <input id="b" type="range" min="0" max="90" step="0.1" value="45" aria-label="Intercept b"><output id="bValue"></output></label></div>
+<div class="controls" style="margin-top:12px"><label id="stepWrap">Step <input id="step" type="range" min="0" max="11" value="0" aria-label="Calculation step"><output id="stepValue"></output></label><label id="fixedWrap" hidden>Fixed b <select id="fixedB"><option value="0">0: through the origin</option><option value="45">45: fixed intercept 45</option></select></label><button id="previous">Previous</button><button id="next">Next</button><button id="play">Play</button><button id="best">Show minimum</button><button id="reset">Restart this mode</button></div>
+</section>
+<div class="two"><section class="card"><h2>Left / Prediction function f<sub>w,b</sub>(x)</h2><div id="leftPlot"></div><p class="muted">Input x is horizontal; fuel economy y is vertical. Each car gets one prediction. Weight is expressed in thousands of pounds.</p></section><section class="card"><h2 id="rightTitle"></h2><div id="rightPlot"></div><p id="rightCaption" class="muted"></p></section></div>
+<section class="card" aria-live="polite"><h2 id="explainTitle"></h2><div id="explain"></div><div id="metrics" class="numbers"></div></section>
+<section class="card"><h2>Compare actual values and predictions numerically</h2><div class="scroll"><table><thead><tr><th>Car</th><th>Weight x</th><th class="actual">Actual y</th><th class="predicted">Prediction ŷ</th><th class="error">Error ŷ − y</th><th>Error²</th><th class="contribution">Error² / 16</th></tr></thead><tbody id="rows"></tbody></table></div><p class="muted">In mode 1, cars not yet included in the sum are faint. Their actual values and predictions remain visible for comparison.</p></section>
+<section class="card"><h2>Three distinctions to keep clear</h2><p><b>Input x</b> is a car's measured weight. It does not change when you choose a model.</p><p><b>w and b</b> are the slope and intercept of the line you choose. These are the parameters moving on the right plot.</p><p><b>minimize<sub>w</sub> J(w)</b> chooses w while holding b fixed. Here J(w) abbreviates J(w, b <sub>fixed</sub>). The expression f<sub>w</sub>(x) = wx without b is specifically the case b = 0.</p><p><b>minimize<sub>w,b</sub> J(w,b)</b> chooses both w and b. More lines are available, so the achievable minimum cost on the same data cannot exceed the minimum with only w free. The two minima could be equal.</p><p class="hint">1/2 halves all scores without moving the minimizer. 1/m takes their average. Squaring prevents positive and negative errors from cancelling and gives larger errors more weight.</p>
+<details><summary>Dataset and selected cars</summary><p>R. Quinlan (1993), <a href="https://archive.ics.uci.edu/dataset/9/auto+mpg" target="_blank">UCI Auto MPG</a>, DOI 10.24432/C5859H, CC BY 4.0. Eight evenly spaced observations by weight are selected from 398 public observations, using the seaborn-data copy. Fuel economy is measured in mpg; higher is better. Weight alone cannot explain every difference. This lab teaches the cost function rather than evaluating predictive performance.</p><div id="cars"></div></details></section>
+</main><script>
+const data = [{"x": 1.613, "y": 35.0, "name": "datsun 1200"}, {"x": 2.074, "y": 30.0, "name": "peugeot 304"}, {"x": 2.279, "y": 20.0, "name": "toyota carina"}, {"x": 2.635, "y": 26.6, "name": "buick skylark"}, {"x": 2.979, "y": 21.0, "name": "peugeot 504 (sw)"}, {"x": 3.439, "y": 16.0, "name": "plymouth satellite custom"}, {"x": 4.082, "y": 15.0, "name": "chevrolet monte carlo s"}, {"x": 5.14, "y": 13.0, "name": "pontiac safari (sw)"}];
+const xs=data.map(d=>d.x), ys=data.map(d=>d.y), m=data.length;
+const $=id=>document.getElementById(id), fmt=(x,n=2)=>Number(x).toFixed(n);
+const C={actual:'#1768ad',predicted:'#c86600',error:'#8c439c',contribution:'#207454'};
+const state={mode:1,w:-5,b:35,step:0,timer:null,tick:0};
+const cost=(w,b)=>xs.reduce((sum,x,i)=>sum+(w*x+b-ys[i])**2,0)/(2*m);
+const optimalW=b=>xs.reduce((s,x,i)=>s+x*(ys[i]-b),0)/xs.reduce((s,x)=>s+x*x,0);
+const mx=xs.reduce((a,b)=>a+b)/m, my=ys.reduce((a,b)=>a+b)/m;
+const jointW=xs.reduce((s,x,i)=>s+(x-mx)*(ys[i]-my),0)/xs.reduce((s,x)=>s+(x-mx)**2,0), jointB=my-jointW*mx;
+function svgStart(){return '<svg viewBox="0 0 520 350" role="img">';}
+function axes(xmin,xmax,ymin,ymax,xlabel,ylabel){
+ const X=x=>62+(x-xmin)/(xmax-xmin)*425, Y=y=>292-(y-ymin)/(ymax-ymin)*245;
+ let s=svgStart()+'<title>'+xlabel+' as a function of '+ylabel+'</title>';
+ for(let i=0;i<=4;i++){let x=xmin+(xmax-xmin)*i/4,y=ymin+(ymax-ymin)*i/4;s+=`<path d="M${X(x)},47V292 M62,${Y(y)}H487" stroke="#e4eaf0"/><text x="${X(x)}" y="311" text-anchor="middle">${fmt(x,1)}</text><text x="54" y="${Y(y)+4}" text-anchor="end">${fmt(y,1)}</text>`;}
+ s+=`<path d="M62,47V292H487" fill="none" stroke="#738598"/><text x="275" y="338" text-anchor="middle">${xlabel}</text><text x="63" y="23">${ylabel}</text>`;
+ return {s,X,Y};
+}
+function left(){
+ const predictions=xs.map(x=>state.w*x+state.b), xmin=0,xmax=5.5;
+ const lo=Math.min(0,state.w*xmin+state.b,state.w*xmax+state.b),hi=Math.max(50,state.w*xmin+state.b,state.w*xmax+state.b);
+ const {s:base,X,Y}=axes(xmin,xmax,lo-3,hi+3,'x / weight (1,000 lb)','y / fuel economy (mpg)');let s=base;
+ s+=`<path d="M${X(xmin)},${Y(state.w*xmin+state.b)}L${X(xmax)},${Y(state.w*xmax+state.b)}" stroke="${C.predicted}" stroke-width="2.5"/>`;
+ xs.forEach((x,i)=>{const selected=state.mode!==1||i<state.step;const opacity=selected?1:.25;const py=Y(predictions[i]),ay=Y(ys[i]),px=X(x);s+=`<g opacity="${opacity}"><path d="M${px},${ay}V${py}" stroke="${C.error}" stroke-width="3" stroke-dasharray="4 3"/><circle cx="${px}" cy="${ay}" r="5" fill="${C.actual}"/><path d="M${px-5},${py-5}l10,10m-10,0l10,-10" stroke="${C.predicted}" stroke-width="2.5"/><text x="${px+7}" y="${ay-7}">${i+1}</text></g>`;});
+ s+=`<text x="75" y="42" fill="${C.predicted}">Current line: ŷ = ${fmt(state.w)}x + ${fmt(state.b)}</text></svg>`;$('leftPlot').innerHTML=s;
+}
+function right(){
+ if(state.mode===1){
+  $('rightTitle').innerHTML='Right / The 8 contributions to J(w,b)';
+  const values=xs.map((x,i)=>(state.w*x+state.b-ys[i])**2/(2*m));const {s:base,X,Y}=axes(.5,m+.5,0,Math.max(1,...values)*1.2,'i / car index','Each squared error / (2m)');let s=base;
+  values.forEach((v,i)=>{const on=i<state.step;s+=`<rect x="${X(i+1)-15}" y="${Y(v)}" width="30" height="${292-Y(v)}" fill="${C.contribution}" opacity="${on?1:.12}"/><text x="${X(i+1)}" y="${Y(v)-7}" text-anchor="middle">${on?fmt(v):''}</text>`;});
+  $('rightPlot').innerHTML=s+'</svg>';$('rightCaption').textContent='Each bar is one car\u0027s contribution to the total cost. Add all eight green bars to obtain J. This is not yet a cost curve for changing w.';
+ }else if(state.mode===2){
+  $('rightTitle').innerHTML='Right / J(w) = J(w, fixed b)';
+  const ws=Array.from({length:161},(_,i)=>-20+i*.25), vals=ws.map(w=>cost(w,state.b));const {s:base,X,Y}=axes(-20,20,0,Math.max(...vals)*1.05,'w / slope','J(w) / cost across 8 cars');let s=base;
+  s+=`<path d="${ws.map((w,i)=>(i?'L':'M')+X(w)+','+Y(vals[i])).join(' ')}" fill="none" stroke="${C.contribution}" stroke-width="3"/>`;
+  const ow=optimalW(state.b);s+=`<circle cx="${X(ow)}" cy="${Y(cost(ow,state.b))}" r="6" fill="${C.contribution}"/><circle cx="${X(state.w)}" cy="${Y(cost(state.w,state.b))}" r="7" fill="${C.predicted}"/><text x="75" y="42">Fixed b = ${fmt(state.b)} / green = minimum cost</text></svg>`;
+  $('rightPlot').innerHTML=s;$('rightCaption').textContent='One line on the left corresponds to one point on the right. The left horizontal axis x differs from the right horizontal axis w. The orange point is the current line\u0027s cost.';
+ }else{
+  $('rightTitle').innerHTML='Right / Cost map of J(w,b) from above';
+  const {s:base,X,Y}=axes(-20,20,0,90,'w / slope','b / intercept');let tiles='';const max=cost(20,90);
+  for(let a=0;a<48;a++)for(let b=0;b<36;b++){let w=-20+(a+.5)*40/48,intercept=(b+.5)*90/36,v=cost(w,intercept),t=Math.log1p(v)/Math.log1p(max);tiles+=`<rect x="${X(-20+a*40/48)}" y="${Y((b+1)*90/36)}" width="${425/48+.3}" height="${245/36+.3}" fill="hsl(206,55%,${96-62*t}%)"/>`;}
+  let s=base+tiles+`<path d="M62,${Y(0)}H487" stroke="#333" stroke-dasharray="5 3"/><circle cx="${X(jointW)}" cy="${Y(jointB)}" r="7" fill="${C.contribution}" stroke="white" stroke-width="2"/><circle cx="${X(state.w)}" cy="${Y(state.b)}" r="7" fill="${C.predicted}" stroke="white" stroke-width="2"/><text x="75" y="42">Brighter = lower cost / green = minimum</text></svg>`;
+  $('rightPlot').innerHTML=s;$('rightCaption').textContent='Horizontal w and vertical b specify one line; color shows its cost. Restricting b to 0 searches only the bottom row. Freeing both parameters lets you search the whole map.';
+ }
+}
+function explanation(){
+ const errors=xs.map((x,i)=>state.w*x+state.b-ys[i]),squares=errors.map(e=>e*e),sum=squares.reduce((a,b)=>a+b,0),J=sum/(2*m),k=Math.min(state.step,m),partial=squares.slice(0,k).reduce((a,b)=>a+b,0);
+ if(state.mode===1){
+  if(state.step===0){$('explainTitle').textContent='Step 0 / Distinguish actual values and predictions';$('explain').innerHTML='<p>Blue points are observed targets; the orange line is the current model. Press Next to compare them for the first car. Here w and b are fixed.</p>';}
+  else if(state.step<=m){const i=state.step-1;$('explainTitle').textContent=`Step ${state.step} / Add the error for car ${state.step}`;$('explain').innerHTML=`<p><span class="predicted">Prediction ${fmt(state.w*xs[i]+state.b)}</span> − <span class="actual">actual ${fmt(ys[i])}</span> = <b class="error">${fmt(errors[i])}</b>. Squaring gives <b>${fmt(squares[i])}</b>.</p><p>The purple vertical line measures error magnitude. Squaring also makes negative errors positive. The accumulated squared errors total ${fmt(partial)}.</p><p>The right bars already divide each squared error by 16. The current sum ${fmt(partial/(2*m))} is <b>${k===m?"the cost across all 8 cars":"a partial sum, not yet the total cost"}</b>.</p>`;}
+  else if(state.step===9){$('explainTitle').textContent='Step 9 / Σ adds all 8 squared errors';$('explain').innerHTML=`<p>${squares.map(v=>fmt(v,2)).join(' + ')} ≈ <b>${fmt(sum)}</b></p><p>Every term from i=1 to m=8 is included. We have not averaged them yet.</p>`;}
+  else if(state.step===10){$('explainTitle').textContent='Step 10 / Divide by m to take the mean';$('explain').innerHTML=`<p>${fmt(sum)} ÷ 8 = <b>${fmt(sum/m)}</b>: the mean squared error per car.</p><p>Duplicating the same eight observations doubles the sum but leaves the mean unchanged. This avoids increasing the score just because there are more observations.</p>`;}
+  else{$('explainTitle').textContent='Step 11 / Divide by 2 again to obtain J';$('explain').innerHTML=`<p>${fmt(sum/m)} ÷ 2 = <b class="contribution">J = ${fmt(J)}</b>.</p><p>Thus 1/(2m) means divide by 8, then by 2. Removing 1/2 doubles every cost without changing the best w,b. The factor is a convention that simplifies derivatives later.</p>`;}
+ }else{
+  const ow=optimalW(state.mode===2?state.b:0),fixed=cost(ow,state.mode===2?state.b:0),joint=cost(jointW,jointB);
+  $('explainTitle').textContent=state.mode===2?'Choosing a line = choosing a point on the cost curve':'One free parameter has become two';
+  $('explain').innerHTML=state.mode===2?`<p>Here b=${fmt(state.b)} is fixed; only w is free. The minimum under this constraint is <b>${fmt(fixed)}</b>, at w approximately ${fmt(ow)}.</p><p>Change the fixed b from 0 to 45. Both the cost curve and its minimizer change. Playback scans candidate w values; it is not gradient descent.</p>`:`<p>With b=0, the minimum cost is <b>${fmt(fixed)}</b>. Choosing both w and b can reduce it to <b>${fmt(joint)}</b> at w≈${fmt(jointW)}, b≈${fmt(jointB)}.</p><p>Mode 2 searches one row; mode 3 searches the whole map. Playback is a visual path between two optimal points, not a training algorithm.</p>`;
+ }
+ $('metrics').innerHTML=`<div class="number">Sum of squared errors<strong>${fmt(sum)}</strong></div><div class="number">Mean squared error<strong>${fmt(sum/m)}</strong></div><div class="number">Total cost J = sum / 16<strong class="contribution">${fmt(J)}</strong></div>`;
+ if(state.mode===1&&state.step<8)$('metrics').insertAdjacentHTML('afterbegin','<p style="grid-column:1/-1" class="muted">These three numbers preview the final values for all eight cars. The explanation above shows the partial sum for the current step.</p>');
+ $('rows').innerHTML=data.map((d,i)=>`<tr style="opacity:${state.mode===1&&i>=k?.35:1}"><td>${i+1}</td><td>${fmt(d.x,3)}</td><td class="actual">${fmt(d.y)}</td><td class="predicted">${fmt(state.w*d.x+state.b)}</td><td class="error">${fmt(errors[i])}</td><td>${fmt(squares[i])}</td><td class="contribution">${fmt(squares[i]/(2*m))}</td></tr>`).join('');
+}
+function render(){
+ $('w').value=state.w;$('b').value=state.b;$('wValue').textContent=fmt(state.w);$('bValue').textContent=fmt(state.b);$('step').value=state.step;$('stepValue').textContent=state.step+'/11';
+ $('w').disabled=state.mode===1;$('b').disabled=state.mode!==3;$('stepWrap').hidden=state.mode!==1;$('fixedWrap').hidden=state.mode!==2;
+ $('previous').hidden=state.mode!==1;$('next').hidden=state.mode!==1;$('previous').disabled=state.step===0;$('next').disabled=state.step===11;$('best').hidden=state.mode===1;
+ [1,2,3].forEach(v=>$('mode'+v).classList.toggle('active',state.mode===v));
+ $('stageTitle').textContent=['','1. Square, sum, and average the errors','2. minimize w J(w) / fixed b','3. minimize w,b J(w,b) / both free'][state.mode];
+ $('intro').innerHTML=['','Keep the line fixed and inspect one car at a time. Press <b>Next</b> to watch more observations join the calculation.','Move the w slider. As the left line changes, the right orange point moves along the cost curve. With b=0, every line passes through the origin.','w controls the slope; b controls vertical position. Move both to find a bright region, then compare your choice using Show minimum.'][state.mode];
+ left();right();explanation();
+}
+function stop(){if(state.timer)clearInterval(state.timer);state.timer=null;$('play').textContent='Play';}
+function setMode(mode){stop();state.mode=mode;state.step=0;state.tick=0;state.w=mode===1?-5:optimalW(0);state.b=mode===1?35:0;$('fixedB').value='0';render();}
+[1,2,3].forEach(i=>$('mode'+i).onclick=()=>setMode(i));
+$('w').oninput=e=>{stop();state.w=+e.target.value;render();};$('b').oninput=e=>{stop();state.b=+e.target.value;render();};$('step').oninput=e=>{stop();state.step=+e.target.value;render();};
+$('fixedB').onchange=e=>{stop();state.b=+e.target.value;render();};$('previous').onclick=()=>{stop();state.step=Math.max(0,state.step-1);render();};$('next').onclick=()=>{stop();state.step=Math.min(11,state.step+1);render();};$('reset').onclick=()=>setMode(state.mode);
+$('best').onclick=()=>{stop();state.w=state.mode===2?optimalW(state.b):jointW;if(state.mode===3)state.b=jointB;render();};
+$('play').onclick=()=>{if(state.timer){stop();return;}if(state.mode===1&&state.step===11)state.step=0;state.tick=0;const w0=optimalW(0);state.timer=setInterval(()=>{if(state.mode===1){state.step++;if(state.step>=11)stop();}else if(state.mode===2){state.w=-20+state.tick;if(state.tick>=40)stop();}else{const t=state.tick/30;state.w=w0+(jointW-w0)*t;state.b=jointB*t;if(state.tick>=30)stop();}state.tick++;render();},state.mode===1?1400:350);$('play').textContent='Pause';render();};
+$('cars').textContent=data.map((d,i)=>`${i+1}. ${d.name} (${d.x*1000} lb, ${d.y} mpg)`).join(' / ');
+render();
+</script></body></html>
