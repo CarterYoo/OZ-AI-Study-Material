@@ -12,8 +12,6 @@ The shared collection for Weeks 1 to 3. For a particular class, open its [weekly
 
 The combined notebooks contain all 19 optional labs and 81 one-expression mathematical exercises, with references directly above the exercises. Week-specific copies contain the same lab cells and their own setup cells.
 
-The PowerPoint preserves the original 169-slide export. Its 164 matching lesson-note sections have been refreshed from the detailed teaching script. The five additional source pages remain in the export; script headings include the source page to make matching easier. The live deck and export can therefore have different displayed slide numbers.
-
-The English script preserves all 164 detailed sections and 1,215 source sentences, including examples and worked reasoning. Both PowerPoint editions retain the original slide and media content; the language difference is in their speaker notes.
+The slide images remain in English, with separate Korean and English speaker notes.
 
 The script is an instructional adaptation based on the annotated slides, rather than a verbatim transcript. The original course authors and upstream lab source are credited in [sources](../../docs/sources.md).

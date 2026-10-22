@@ -21,4 +21,4 @@ The sequence covers the limits of linear-regression outputs, sigmoid probabiliti
 
 The nine optional labs also cover logistic gradient descent, scikit-learn, overfitting, and regularization. They extend beyond the hand-calculation worksheet. English and Korean notebooks use the same executable code.
 
-[English teaching notes](teaching-notes.en.md) · [한국어 강의 노트](teaching-notes.ko.md) · [Editable LaTeX sources](source/) · [Arithmetic reference](data/calculation-checks.json)
+[English teaching notes](teaching-notes.en.md) · [한국어 강의 노트](teaching-notes.ko.md) · [Editable LaTeX sources](source/)
