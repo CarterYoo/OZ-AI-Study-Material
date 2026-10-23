@@ -8,13 +8,16 @@
 
 ## 주차별 자료
 
-| 주차 | 내용 | 자료 |
-| :--- | :--- | :--- |
-| W1 | Linear Regression, Cost Function, Gradient Descent | [워크시트·답지·Colab](weekly/week-01/README.md) |
-| W2 | Multiple Regression, Vectorization, Feature Scaling | [워크시트·답지·Colab](weekly/week-02/README.md) |
-| W3 | Sigmoid, Classification, Logistic Loss | [워크시트·답지·Colab](weekly/week-03/README.md) |
+| Week | Topics | Canva pages | Materials |
+| :--- | :--- | :--- | :--- |
+| 01 | Orientation and the Transformer Roadmap | 1 to 8 | [Open](weekly/week-01/README.md) |
+| 02 | Machine Learning Foundations | 9 to 42 | [Open](weekly/week-02/README.md) |
+| 03 | Cost Functions and Gradient Descent | 43 to 73 | [Open](weekly/week-03/README.md) |
+| 04 | Multiple Features and Feature Scaling | 74 to 107 | [Open](weekly/week-04/README.md) |
+| 05 | Feature Engineering and Classification | 108 to 135 | [Open](weekly/week-05/README.md) |
+| 06 | Technical AI Safety and Hackathon Overview | 136 to 148 | [Open](weekly/week-06/README.md) |
 
-각 주차에 한국어·영어 워크시트, 풀이가 있는 답지, 개념 확인 문제, 강의 노트, Colab이 있습니다
+The six weeks now match the OZ Lab Canva lesson numbers. Korean and English worksheets, worked answers, and notebooks are retained; each weekly page lists the materials used in that meeting.
 
 ## 공통 자료
 

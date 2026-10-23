@@ -6,7 +6,7 @@
 \definecolor{ink}{HTML}{203B50}
 \definecolor{rulegray}{HTML}{D2D9DF}
 \pagestyle{fancy}\fancyhf{}
-\fancyhead[L]{\small Machine Learning Concept Check}\fancyhead[R]{\small W3}
+\fancyhead[L]{\small Machine Learning Concept Check}\fancyhead[R]{\small W1}
 \fancyfoot[C]{\small\thepage\ / 4}
 \renewcommand{\headrulewidth}{0.3pt}
 \setlength{\headheight}{15pt}
@@ -19,103 +19,105 @@
 \newcommand{\foreachline}[1]{\linecount=0\loop\ifnum\linecount<#1\vspace{8mm}\par{\color{rulegray}\hrule}\advance\linecount by1\repeat}
 \begin{document}
 
-{\LARGE\bfseries\color{ink} W3 · Classification and Generalization}\par
-{\small Logistic regression · Decision boundaries · Overfitting · Regularization}\par
+{\LARGE\bfseries\color{ink} W1 · Machine Learning and Linear Regression}\par
+{\small Supervised learning · Regression · Cost functions · Gradient descent}\par
 \vspace{3mm}Name\enspace\rule{43mm}{0.3pt}\hfill Date\enspace\rule{35mm}{0.3pt}\par\vspace{3mm}
 \parttitle{1. Concept Check}{Choose the single best answer for each question.}
-\question{1}{What kind of task is classifying email as spam or legitimate?}
+\question{1}{A model sees many pairs of house sizes and sale prices, then predicts the price of a new house. What kind of learning is this?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item Predicting a continuous house price
-\item Converting input units
-\item Binary classification
-\item Counting examples
+\item Supervised learning
+\item Grouping houses without target labels
+\item A calculation that uses no data
+\item Choosing prices at random
 \end{enumerate}\vfill
-\question{2}{What is the output range of the sigmoid function for a finite input?}
+\question{2}{Which is a regression problem?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item Less than $-1$
-\item Between $0$ and $1$
-\item Always greater than $1$
-\item Exactly $0$ for every input
+\item Classifying email as spam or legitimate
+\item Classifying animals in photos as cats or dogs
+\item Predicting tomorrow's temperature as a number
+\item Classifying reviews as positive or negative
 \end{enumerate}\vfill
-\question{3}{The predicted positive-class probability is 0.8, and the threshold for a positive prediction is 0.5. What is the result?}
+\question{3}{You have customer data without labels and want to group similar customers. Which approach is most appropriate?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item Negative
-\item The probability cannot be calculated
-\item The actual target must be positive
-\item The model predicts the positive class
+\item Assigning the same target label to every customer
+\item Finding groups with unsupervised learning
+\item Using customer IDs directly as purchase amounts
+\item Fixing the groups before looking at the data
 \end{enumerate}\vfill
-\question{4}{You raise the positive-class threshold from 0.5 to 0.8 while keeping the same predicted probabilities. Which statement is correct?}
+\question{4}{In house-price prediction, $x$ is house size and $y$ is the actual price. Which is the input feature?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item The number of positive predictions cannot increase
-\item All predicted probabilities automatically increase
-\item Accuracy must increase
-\item All actual targets change
+\item The actual price
+\item The amount of prediction error
+\item The number of training iterations
+\item House size
 \end{enumerate}\vfill
-\question{5}{What is a decision boundary?}
+\question{5}{In $\hat y=wx+b$, you keep $b$ fixed and change only $w$. Which property of the line changes directly?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item The boundary of the folder containing the data
-\item The time when training ends
-\item A boundary in input space where the predicted class changes
-\item A line that randomly divides the targets
+\item Its slope
+\item The number of examples
+\item The actual targets
+\item The input units
 \end{enumerate}\vfill
 \newpage
 \parttitle{1. Concept Check / Continued}{Choose the single best answer for each question.}
-\question{6}{For an example whose actual target is 1, the model predicts a positive probability of 0.01. Its logistic loss is greater than which alternative?}
+\question{6}{If $\hat y=2x+1$ and $x=3$, what does the model predict?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item Predicting a probability of 0.001
-\item Predicting a probability of 0.9
-\item Predicting the same probability of 0.01
-\item The loss is identical regardless of the probability
+\item $3$
+\item $5$
+\item $7$
+\item $9$
 \end{enumerate}\vfill
-\question{7}{A model fits its training data very well but often fails on unseen data. What should you suspect?}
+\question{7}{Which best describes the purpose of a cost function?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item Necessarily perfect generalization
-\item A file format that stores too little data
-\item Proof that classification is impossible
-\item Overfitting
+\item Naming the training data
+\item Summarizing the differences between predictions and actual values in one number
+\item Increasing the number of input features
+\item Always producing the correct answer
 \end{enumerate}\vfill
-\question{8}{How can regularization help reduce overfitting?}
+\question{8}{You compare two models on the same data using the same cost function. Model A has a lower cost than B. What does this mean?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item By penalizing excessively large weights and discouraging overly complex fitting
-\item By deleting all training targets
-\item By rewarding predictions with large errors
-\item By making every model perfect
+\item A must be more accurate on every new example
+\item A has not been trained at all
+\item B must have more data
+\item A has a smaller summary of prediction errors on this data
 \end{enumerate}\vfill
-\question{9}{With other conditions fixed, what can happen if the regularization strength $\lambda$ is too large?}
+\question{9}{Why does gradient descent use the gradient?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item Every error must disappear
+\item To adjust parameters step by step in a direction that reduces cost
+\item To change actual targets to match predictions
+\item To delete training data regardless of its usefulness
+\item To keep making the gradient larger
+\end{enumerate}\vfill
+\question{10}{What can happen if the learning rate is too large?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item The model must reach the minimum in one step
 \item The number of input features automatically increases
-\item Weights can be suppressed so strongly that useful patterns are missed
-\item The number of actual targets increases
-\end{enumerate}\vfill
-\question{10}{What is the best way to judge whether a classifier has learned successfully?}
-\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item Look only at training accuracy
-\item Also evaluate performance on data not used for training
-\item Always prefer larger weights
-\item Change every prediction to the same class
+\item Updates can overshoot the minimum, causing the cost to increase or oscillate
+\item Every prediction becomes equal to its actual target
 \end{enumerate}\vfill
 \newpage
 \parttitle{2. Think Like an ML Scientist}{Question 11 · Read the pseudocode and find why the model does not work as intended.}
-Spam has y=1; legitimate email has y=0. The model receives a smaller loss when it is more confidently wrong. Assume the other calculations and learning rate are appropriate, every p lies strictly between 0 and 1, and log is the natural logarithm.
+You built a model that predicts house prices from size. Small parameter updates should reduce the cost, but it increases as training continues. Assume the learning rate is sufficiently small and the gradient function is implemented correctly.
 \par\vspace{3mm}
 {\small\ttfamily\begin{tabular}{r l}
-1 & \hspace*{0.0mm}z = dot(x, w) + b \\
-2 & \hspace*{0.0mm}p = sigmoid(z) \\
-3 & \hspace*{0.0mm}loss = y * log(p) + (1 - y) * log(1 - p) \\
-4 & \hspace*{0.0mm}update\_parameters\_to\_minimize(loss) \\
+1 & \hspace*{0.0mm}w = 0; b = 0 \\
+2 & \hspace*{0.0mm}alpha = 0.001 \\
+3 & \hspace*{0.0mm}repeat 1000 times: \\
+4 & \hspace*{6.0mm}dw, db = gradient(X, y, w, b) \\
+5 & \hspace*{6.0mm}w = w + alpha * dw \\
+6 & \hspace*{6.0mm}b = b + alpha * db \\
 \end{tabular}}\par\vspace{5mm}
-\textbf{11(1)} Identify what is missing from the loss definition and rewrite that line correctly.
+\textbf{11(1)} Identify the two lines that work against the goal of reducing cost.
 \answerlines{5}
 \vspace{6mm}
-\textbf{11(2)} For y=1, compare p=0.9 and p=0.1 to explain why the original code prefers incorrect predictions. Use log(0.9) $\approx-0.105$ and log(0.1) $\approx-2.303$.
+\textbf{11(2)} Explain why the cost can increase and rewrite each incorrect line as one corrected line.
 \answerlines{5}
 \vspace{6mm}
 \newpage
 \parttitle{3. Open Question}{Question 12 · There is no single correct answer. Describe your method and reasoning.}
-You have a tool that converts sentences into lists of numbers and a small set of reviews labeled positive or negative. You want to classify unseen reviews and discover new patterns among reviews. In what order would you run your experiments?
+Suppose a tool converts sentences into lists of numbers of equal length. You use it on 100 customer reviews. How would you discover patterns among the reviews?
 \par\vspace{3mm}
-Explain how you would use labeled and unlabeled reviews, check your results, and handle reviews the model is uncertain about. You may combine methods from the course or propose a new idea.
+Describe the pattern you want to find, what you would compare, and how you would check whether it is meaningful. You do not have to assume that numerical distance necessarily measures a difference in meaning.
 \par\vspace{3mm}
 {\small Equations and code are optional. You may answer with text, a diagram, or a simple flowchart.}
 \answerlines{15}

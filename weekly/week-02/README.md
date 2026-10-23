@@ -1,22 +1,19 @@
-# Week 02 / Multiple regression and feature scaling
+# Week 02 / Machine Learning Foundations
 
-Move from one input to several features. Calculate predictions for seven examples, update the parameters, and compare the cost contours before and after scaling.
+Canva pages **9 to 42** in the [combined classroom deck](https://www.canva.com/design/DAHVe4UysZI/view).
 
-| Language | Student PDF | Worked answers |
-| :--- | :--- | :--- |
-| English | [Worksheet](handouts/multiple-regression.worksheet.en.pdf) | [Answer key](handouts/multiple-regression.answers.en.pdf) |
-| 한국어 | [문제](handouts/multiple-regression.worksheet.ko.pdf) | [풀이](handouts/multiple-regression.answers.ko.pdf) |
+[Classroom slide PDF](slides/oz-ai-study-02.pdf) (34 slides) · [Editable PowerPoint](slides/oz-ai-study-02.pptx)
 
-Concept check: [English](handouts/concept-check.en.pdf) · [한국어](handouts/concept-check.ko.pdf). Ten multiple-choice questions, a pseudocode debugging exercise, and an open-response question.
+Original ML source slides 1 to 34, with the OZ orange and gray theme.
 
-The worksheet asks students to draw the model from their calculated values and explain what changes in the cost contours after scaling. The answer copy adds the calculations and graph marks in red.
+[English lesson notes](lesson-notes.en.md) · [Full Korean course notes](../../common/course-1/teaching-notes.ko.md)
 
-## Colab
+## Lesson sequence
 
-[Student notebook](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-02/notebooks/optional-labs.student.ipynb) · [Answer notebook](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-02/notebooks/optional-labs.answers.ipynb)
+Start with examples of machine learning. Distinguish supervised and unsupervised learning, regression and classification, then identify features, targets, training examples, and the parameters in `f(x) = wx + b`. Finish by defining the squared error cost.
 
-한국어 Colab: [학생용](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-02/notebooks/optional-labs.student.ko.ipynb) · [답안](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-02/notebooks/optional-labs.answers.ko.ipynb)
+## Practice
 
-Six optional labs cover NumPy and vectorization, multiple features, feature scaling and learning rates, feature engineering, and scikit-learn. Both languages use the same executable code.
+Use **Python/Jupyter** and **Model Representation** in the [Course 1 source Week 1 notebooks](../week-03/README.md#colab). The cost-function lab continues into the next OZ meeting.
 
-[English teaching notes](teaching-notes.en.md) · [한국어 강의 노트](teaching-notes.ko.md) · [Editable LaTeX sources](source/)
+For an initial calculation, use the prediction and cost tables in the [cost-function worksheet](../week-03/README.md#handouts). The surface and contour activities belong to Week 3.

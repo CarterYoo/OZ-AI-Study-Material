@@ -1,24 +1,33 @@
-# Week 03 / Sigmoid and logistic regression
+# Week 03 / Cost Functions and Gradient Descent
 
-Compare a linear model with a probability model. Calculate sigmoid values, plot predictions, find a decision boundary, and compare how two different losses shape the cost.
+Canva pages **43 to 73** in the [combined classroom deck](https://www.canva.com/design/DAHVe4UysZI/view).
 
-| Language | Student PDF | Worked answers |
-| :--- | :--- | :--- |
-| English | [Worksheet](handouts/sigmoid-logistic.worksheet.en.pdf) | [Answer key](handouts/sigmoid-logistic.answers.en.pdf) |
-| 한국어 | [문제](handouts/sigmoid-logistic.worksheet.ko.pdf) | [풀이](handouts/sigmoid-logistic.answers.ko.pdf) |
+[Classroom slide PDF](slides/oz-ai-study-03.pdf) (31 slides) · [Editable PowerPoint](slides/oz-ai-study-03.pptx)
 
-Concept check: [English](handouts/concept-check.en.pdf) · [한국어](handouts/concept-check.ko.pdf). Ten multiple-choice questions, a pseudocode debugging exercise, and an open-response question.
+Original ML source slides 35 to 65, with the OZ orange and gray theme.
 
-The nine-page worksheet has 28 questions. Its seven-point synthetic dataset has irregular input spacing and a boundary-near exception. Actual targets stay binary; model predictions are plotted separately. Both editions use the same data and calculations.
+[English lesson notes](lesson-notes.en.md) · [Full Korean course notes](../../common/course-1/teaching-notes.ko.md)
 
-The sequence covers the limits of linear-regression outputs, sigmoid probabilities, a straight decision boundary, sigmoid with MSE, and logistic loss with a convex parameter cost. Nonlinear decision boundaries are outside this worksheet's scope.
+## Handouts
+
+| Activity | English worksheet | English worked answers | Korean worksheet | Korean worked answers |
+| :--- | :--- | :--- | :--- | :--- |
+| Cost function and cost surface | [PDF](handouts/cost-function.worksheet.en.pdf) | [PDF](handouts/cost-function.answers.en.pdf) | [PDF](handouts/cost-function.worksheet.ko.pdf) | [PDF](handouts/cost-function.answers.ko.pdf) |
+| Gradient descent by hand | [PDF](handouts/gradient-descent.worksheet.en.pdf) | [PDF](handouts/gradient-descent.answers.en.pdf) | [PDF](handouts/gradient-descent.worksheet.ko.pdf) | [PDF](handouts/gradient-descent.answers.ko.pdf) |
+
+Calculate predictions and cost from eight input/target pairs. Plot `J(w)` and `J(w,b)`, compare the surface with its contours, then take five gradient descent steps for each learning rate. The cases proceed from divergence to very slow movement to convergence. Worked answers show the intermediate calculations and graph marks in red.
+
+Concept check: [English](handouts/concept-check.en.pdf) · [Korean](handouts/concept-check.ko.pdf). This source Course 1 Week 1 review also revisits the foundations from OZ Week 2.
 
 ## Colab
 
-[Student notebook](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/optional-labs.student.ipynb) · [Answer notebook](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/optional-labs.answers.ipynb)
+| Resource | English | Korean |
+| :--- | :--- | :--- |
+| Course 1 source Week 1 optional labs | [Student](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/optional-labs.student.ipynb) · [Answers](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/optional-labs.answers.ipynb) | [Student](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/optional-labs.student.ko.ipynb) · [Answers](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/optional-labs.answers.ko.ipynb) |
+| Cell-by-cell cost exploration | [Open](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/cost-function.interactive.en.ipynb) | [Open](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/cost-function.interactive.ko.ipynb) |
 
-한국어 Colab: [학생용](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/optional-labs.student.ko.ipynb) · [답안](https://colab.research.google.com/github/CarterYoo/OZ-AI-Study-Material/blob/main/weekly/week-03/notebooks/optional-labs.answers.ko.ipynb)
+Start with **Cost Function**. The **Gradient Descent** implementation lab also supports the opening of Week 4. Python/Jupyter and Model Representation are the prerequisites used in Week 2.
 
-The nine optional labs also cover logistic gradient descent, scikit-learn, overfitting, and regularization. They extend beyond the hand-calculation worksheet. English and Korean notebooks use the same executable code.
+Open any notebook in Colab using the notebook links below. The interactive lab uses eight actual Auto MPG observations and distinguishes targets, predictions, and errors by color.
 
-[English teaching notes](teaching-notes.en.md) · [한국어 강의 노트](teaching-notes.ko.md) · [Editable LaTeX sources](source/)
+[Source Week 1 notes, English](teaching-notes.en.md) · [Source Week 1 notes, Korean](teaching-notes.ko.md) · [Editable worksheet sources](source/) · [Dataset](data/auto-mpg.csv)

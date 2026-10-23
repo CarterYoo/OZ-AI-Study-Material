@@ -8,7 +8,7 @@
 \definecolor{ink}{HTML}{203B50}
 \definecolor{rulegray}{HTML}{D2D9DF}
 \pagestyle{fancy}\fancyhf{}
-\fancyhead[L]{\small 머신러닝 개념 확인}\fancyhead[R]{\small W3}
+\fancyhead[L]{\small 머신러닝 개념 확인}\fancyhead[R]{\small W1}
 \fancyfoot[C]{\small\thepage\ / 4}
 \renewcommand{\headrulewidth}{0.3pt}
 \setlength{\headheight}{15pt}
@@ -21,103 +21,105 @@
 \newcommand{\foreachline}[1]{\linecount=0\loop\ifnum\linecount<#1\vspace{8mm}\par{\color{rulegray}\hrule}\advance\linecount by1\repeat}
 \begin{document}
 
-{\LARGE\bfseries\color{ink} W3 · 분류와 모델의 일반화}\par
-{\small 로지스틱 회귀 · 결정 경계 · 과적합 · 정규화}\par
+{\LARGE\bfseries\color{ink} W1 · 머신러닝과 선형 회귀}\par
+{\small 지도 학습 · 회귀 · 비용 함수 · 경사 하강법}\par
 \vspace{3mm}이름\enspace\rule{43mm}{0.3pt}\hfill 날짜\enspace\rule{35mm}{0.3pt}\par\vspace{3mm}
 \parttitle{1. 개념 확인}{각 문항에서 가장 적절한 답 하나를 고르세요.}
-\question{1}{메일을 스팸과 정상으로 구분하는 작업은 무엇에 해당할까요?}
+\question{1}{집의 넓이와 실제 거래 가격을 여러 쌍 보여 주고, 새 집의 가격을 예측하게 합니다. 어떤 학습에 해당할까요?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item 연속적인 집값 예측
-\item 입력 단위 변환
-\item 이진 분류
-\item 데이터 개수 계산
+\item 지도 학습
+\item 정답 없이 집을 묶는 학습
+\item 데이터를 사용하지 않는 계산
+\item 가격을 무작위로 고르는 과정
 \end{enumerate}\vfill
-\question{2}{시그모이드 함수가 유한한 입력값을 받아 출력하는 값의 범위는 무엇일까요?}
+\question{2}{다음 중 회귀 문제는 무엇일까요?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item $-1$보다 작다
-\item $0$과 $1$ 사이이다
-\item 항상 $1$보다 크다
-\item 어떤 입력에서도 정확히 $0$이다
+\item 메일을 스팸과 정상으로 구분하기
+\item 사진 속 동물을 고양이와 개로 구분하기
+\item 내일의 기온을 숫자로 예측하기
+\item 리뷰를 긍정과 부정으로 구분하기
 \end{enumerate}\vfill
-\question{3}{양성 클래스의 예측 확률이 0.8이고, 0.5 이상이면 양성으로 분류합니다. 결과는 무엇일까요?}
+\question{3}{정답 이름표가 없는 고객 데이터를 보고, 비슷한 고객끼리 묶으려 합니다. 가장 가까운 접근은 무엇일까요?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item 음성
-\item 확률을 계산할 수 없다
-\item 실제 정답이 반드시 양성이다
-\item 모델은 양성으로 분류한다
+\item 모든 고객에게 같은 정답 붙이기
+\item 비지도 학습으로 묶음 찾기
+\item 고객 번호를 그대로 구매 금액으로 쓰기
+\item 데이터를 보기 전에 묶음을 확정하기
 \end{enumerate}\vfill
-\question{4}{양성으로 판정하는 기준을 0.5에서 0.8로 높였습니다. 같은 예측 확률들을 사용할 때 무엇이 맞을까요?}
+\question{4}{집값 예측에서 $x$가 집의 넓이이고 $y$가 실제 가격입니다. 입력 특성은 무엇일까요?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item 양성으로 판정되는 사례 수는 늘지 않는다
-\item 모든 예측 확률이 자동으로 커진다
-\item 정확도가 반드시 높아진다
-\item 모든 실제 정답이 바뀐다
+\item 실제 가격
+\item 예측이 틀린 정도
+\item 학습 횟수
+\item 집의 넓이
 \end{enumerate}\vfill
-\question{5}{결정 경계는 무엇을 뜻할까요?}
+\question{5}{모델 $\hat y=wx+b$에서 $b$를 그대로 두고 $w$만 바꾸면, 직선의 어떤 성질이 직접 달라질까요?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item 데이터를 저장한 폴더의 경계
-\item 학습 시간이 끝나는 시점
-\item 입력 공간에서 모델의 분류 결과가 바뀌는 경계
-\item 정답을 무작위로 나누는 선
+\item 기울기
+\item 데이터의 개수
+\item 실제 정답
+\item 입력의 단위
 \end{enumerate}\vfill
 \newpage
 \parttitle{1. 개념 확인 · 계속}{각 문항에서 가장 적절한 답 하나를 고르세요.}
-\question{6}{실제 정답이 1인 사례에 대해 양성 확률을 0.01로 예측했습니다. 로지스틱 손실은 어떤 예측에 비해 더 클까요?}
+\question{6}{$\hat y=2x+1$이고 $x=3$입니다. 모델의 예측값은 얼마일까요?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item 확률을 0.001로 예측한 경우
-\item 확률을 0.9로 예측한 경우
-\item 동일하게 0.01로 예측한 경우
-\item 예측 확률과 관계없이 손실은 같다
+\item $3$
+\item $5$
+\item $7$
+\item $9$
 \end{enumerate}\vfill
-\question{7}{학습 데이터에서는 매우 잘 맞지만, 처음 보는 데이터에서는 자주 틀립니다. 무엇을 의심할 수 있을까요?}
+\question{7}{비용 함수의 역할을 가장 잘 설명한 것은 무엇일까요?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item 반드시 완벽한 일반화
-\item 데이터가 너무 적게 저장된 파일 형식
-\item 분류 문제를 풀 수 없다는 증거
-\item 과적합
+\item 학습 데이터의 이름을 정한다
+\item 여러 예측이 실제 값과 얼마나 다른지 하나의 값으로 요약한다
+\item 입력 특성의 개수를 늘린다
+\item 항상 정확한 정답을 만든다
 \end{enumerate}\vfill
-\question{8}{정규화가 과적합을 줄이는 데 도움을 주는 방식은 무엇일까요?}
+\question{8}{같은 데이터와 같은 비용 함수로 두 모델을 비교했습니다. A의 비용이 B보다 작다는 것은 무엇을 뜻할까요?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item 지나치게 큰 가중치에 비용을 부과해 복잡한 맞춤을 억제한다
-\item 학습 정답을 모두 삭제한다
-\item 오차가 큰 예측에 보상을 준다
-\item 모든 모델을 완벽하게 만든다
+\item A는 모든 새 데이터에서도 반드시 더 정확하다
+\item A는 학습을 전혀 하지 않았다
+\item B의 데이터 개수가 반드시 더 많다
+\item 이 데이터에서 A의 예측 오차를 비용으로 요약한 값이 더 작다
 \end{enumerate}\vfill
-\question{9}{다른 조건이 같을 때 정규화 강도 $\lambda$를 너무 크게 설정하면 어떤 일이 생길 수 있을까요?}
+\question{9}{경사 하강법에서 기울기를 이용하는 주된 이유는 무엇일까요?}
 \begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item 반드시 모든 오차가 사라진다
+\item 비용을 줄이는 방향으로 매개변수를 조금씩 바꾸기 위해
+\item 실제 정답을 모델 예측에 맞춰 고치기 위해
+\item 학습 데이터를 무조건 삭제하기 위해
+\item 기울기를 항상 크게 만들기 위해
+\end{enumerate}\vfill
+\question{10}{학습률이 지나치게 크면 어떤 일이 생길 수 있을까요?}
+\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
+\item 반드시 한 번에 최솟값에 도착한다
 \item 입력 특성이 자동으로 늘어난다
-\item 가중치가 과하게 억제되어 필요한 패턴도 못 배울 수 있다
-\item 실제 정답의 개수가 늘어난다
-\end{enumerate}\vfill
-\question{10}{분류 모델이 학습을 잘했는지 판단하는 방법으로 가장 적절한 것은 무엇일까요?}
-\begin{enumerate}[label=(\arabic*),leftmargin=9mm,itemsep=0pt,topsep=2pt,parsep=0pt]
-\item 학습 데이터 정확도만 보고 결론을 낸다
-\item 학습에 쓰지 않은 데이터에서도 성능을 확인한다
-\item 가중치가 크면 무조건 좋다고 판단한다
-\item 예측 결과를 모두 같은 클래스로 바꾼다
+\item 최솟값을 지나쳐 비용이 커지거나 흔들릴 수 있다
+\item 모든 예측값이 실제 정답과 같아진다
 \end{enumerate}\vfill
 \newpage
 \parttitle{2. 머신러닝 사이언티스트의 점검}{11번 · 의사코드를 읽고, 모델이 의도대로 작동하지 않는 원인을 찾으세요.}
-스팸 메일이면 y=1, 정상이면 y=0입니다. 모델이 매우 자신 있게 틀린 답을 내놓을수록 손실이 더 작아지는 현상이 나타납니다. 다른 계산과 학습률은 적절하며, 모든 p는 0보다 크고 1보다 작다고 가정합니다. log는 자연로그입니다.
+여러 집의 넓이로 가격을 예측하는 모델을 만들었습니다. 매개변수를 조금 바꾸면 비용이 줄어들어야 하는데, 학습을 반복할수록 비용이 커집니다. 아래에서는 학습률을 충분히 작게 설정했고, gradient 함수도 올바르게 구현되어 있다고 가정합니다.
 \par\vspace{3mm}
 {\small\ttfamily\begin{tabular}{r l}
-1 & \hspace*{0.0mm}z = dot(x, w) + b \\
-2 & \hspace*{0.0mm}p = sigmoid(z) \\
-3 & \hspace*{0.0mm}loss = y * log(p) + (1 - y) * log(1 - p) \\
-4 & \hspace*{0.0mm}update\_parameters\_to\_minimize(loss) \\
+1 & \hspace*{0.0mm}w = 0; b = 0 \\
+2 & \hspace*{0.0mm}alpha = 0.001 \\
+3 & \hspace*{0.0mm}repeat 1000 times: \\
+4 & \hspace*{6.0mm}dw, db = gradient(X, y, w, b) \\
+5 & \hspace*{6.0mm}w = w + alpha * dw \\
+6 & \hspace*{6.0mm}b = b + alpha * db \\
 \end{tabular}}\par\vspace{5mm}
-\textbf{11(1)} 손실을 정의한 줄에서 빠진 것이 무엇인지 찾고, 그 줄을 한 줄로 고쳐 쓰세요.
+\textbf{11(1)} 비용을 줄이려는 목적과 반대로 작동하는 두 줄을 찾아 표시하세요.
 \answerlines{5}
 \vspace{6mm}
-\textbf{11(2)} 실제 정답이 y=1일 때 p=0.9와 p=0.1을 비교해, 원래 코드가 왜 틀린 예측을 선호하는지 설명하세요. 참고로 log(0.9)는 약 -0.105, log(0.1)은 약 -2.303입니다.
+\textbf{11(2)} 왜 비용이 커질 수 있는지 설명하고, 두 줄을 각각 한 줄로 고쳐 쓰세요.
 \answerlines{5}
 \vspace{6mm}
 \newpage
 \parttitle{3. 열린 질문}{12번 · 정해진 정답은 없습니다. 제안한 방법과 그 이유가 드러나면 충분합니다.}
-문장을 숫자 목록으로 바꾸는 도구와, 소량의 긍정·부정 표시가 붙은 리뷰가 있습니다. 이 자료로 처음 보는 리뷰의 감정을 분류하면서, 리뷰들 사이의 새로운 패턴도 발견하고 싶습니다. 어떤 순서로 실험하겠습니까?
+문장을 같은 길이의 숫자 목록으로 바꿔 주는 도구가 있다고 가정해 봅시다. 고객 리뷰 100개를 이 도구로 바꾼 뒤, 리뷰 사이의 패턴을 발견하려면 어떻게 하겠습니까?
 \par\vspace{3mm}
-이름표가 있는 리뷰와 없는 리뷰를 각각 어떻게 활용할지, 결과를 어떻게 확인할지, 모델이 확신하지 못하는 리뷰는 어떻게 다룰지 자유롭게 설명하세요. 배운 방법을 조합하거나 새로운 아이디어를 제안해도 됩니다.
+어떤 패턴이 궁금한지, 무엇을 비교할지, 발견한 패턴이 의미 있는지 어떻게 확인할지 자유롭게 설명하세요. 숫자 사이의 거리가 반드시 문장의 의미 차이를 나타낸다고 가정할 필요는 없습니다.
 \par\vspace{3mm}
 {\small 수식이나 코드를 반드시 쓸 필요는 없습니다. 글, 그림, 간단한 순서도로 답해도 좋습니다.}
 \answerlines{15}

@@ -1,5 +1,9 @@
 # Sources and acknowledgments
 
+## OZ classroom sequence
+
+The weekly materials follow the [OZ Lab Canva presentation](https://www.canva.com/design/DAHVe4UysZI/view), archived on October 23, 2026. Week 1 uses pages 1 to 8; Weeks 2 to 5 contain the ML source sequence on pages 9 to 135, with the standalone attribution slide omitted; Week 6 uses pages 136 to 148. The slide PDFs preserve the classroom text and illustrations. Source Course 1 week labels differ from OZ lesson numbers.
+
 ## Machine learning
 
 | Source | Use |
